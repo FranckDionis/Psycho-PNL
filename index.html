@@ -20,152 +20,158 @@
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;padding:0}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
-    background:var(--bg); color:var(--ink); font-size:var(--fs);
-    -webkit-font-smoothing:antialiased; line-height:1.55;
-    padding-bottom:calc(78px + env(safe-area-inset-bottom));
-  }
-  body.calm *{transition:none!important; animation:none!important}
-  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:var(--fs);-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:calc(78px + env(safe-area-inset-bottom))}
+  body.calm *{transition:none!important;animation:none!important}
 
-  header{position:sticky; top:0; z-index:20; background:rgba(247,244,238,.85); backdrop-filter:saturate(180%) blur(12px); padding:calc(env(safe-area-inset-top) + 14px) 20px 12px; border-bottom:1px solid var(--line)}
-  header h1{margin:0; font-size:1.35rem; font-weight:800; letter-spacing:-.3px}
-  header p{margin:2px 0 0; font-size:.82rem; color:var(--muted)}
+  header{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.85);backdrop-filter:saturate(180%) blur(12px);padding:calc(env(safe-area-inset-top) + 14px) 20px 12px;border-bottom:1px solid var(--line)}
+  header h1{margin:0;font-size:1.35rem;font-weight:800;letter-spacing:-.3px}
+  header p{margin:2px 0 0;font-size:.82rem;color:var(--muted)}
 
-  main{padding:16px 16px 24px; max-width:540px; margin:0 auto}
-  .view{display:none; animation:fade .25s ease}
+  main{padding:16px 16px 24px;max-width:560px;margin:0 auto}
+  .view{display:none;animation:fade .25s ease}
   .view.active{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-  .card{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px; margin-bottom:14px; box-shadow:var(--shadow)}
-  .card h2{margin:0 0 8px; font-size:1.12rem; font-weight:800}
-  .card h3{margin:14px 0 6px; font-size:.95rem; font-weight:700; color:var(--accent)}
-  .card p{margin:6px 0; font-size:.95rem}
-  .lead{font-size:.95rem; color:var(--muted)}
-  .pill{display:inline-block; background:var(--accent-soft); color:var(--accent); font-size:.72rem; font-weight:700; padding:4px 10px; border-radius:999px; margin-bottom:10px; text-transform:uppercase; letter-spacing:.5px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:var(--shadow)}
+  .card h2{margin:0 0 8px;font-size:1.12rem;font-weight:800}
+  .card h3{margin:14px 0 6px;font-size:.95rem;font-weight:700;color:var(--accent)}
+  .card p{margin:6px 0;font-size:.95rem}
+  .lead{font-size:.95rem;color:var(--muted)}
+  .pill{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:999px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
 
-  .subnav{display:flex; gap:8px; overflow-x:auto; padding:2px 0 12px; -webkit-overflow-scrolling:touch}
+  .subnav{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px;-webkit-overflow-scrolling:touch}
   .subnav::-webkit-scrollbar{display:none}
-  .subnav button{white-space:nowrap; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:.82rem; font-weight:600; padding:8px 14px; border-radius:999px; cursor:pointer}
-  .subnav button.on{background:var(--ink); color:#fff; border-color:var(--ink)}
+  .subnav button{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:.82rem;font-weight:600;padding:8px 14px;border-radius:999px;cursor:pointer}
+  .subnav button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
   .panel{display:none}
   .panel.active{display:block}
 
-  .acc{border:1px solid var(--line); border-radius:14px; margin-bottom:10px; overflow:hidden; background:var(--card)}
-  .acc summary{list-style:none; cursor:pointer; padding:14px 16px; font-weight:700; font-size:.98rem; display:flex; justify-content:space-between; align-items:center; gap:10px}
+  .acc{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden;background:var(--card)}
+  .acc summary{list-style:none;cursor:pointer;padding:14px 16px;font-weight:700;font-size:.98rem;display:flex;justify-content:space-between;align-items:center;gap:10px}
   .acc summary::-webkit-details-marker{display:none}
-  .acc summary .who{font-size:.78rem; color:var(--muted); font-weight:500}
-  .acc summary::after{content:"+"; color:var(--accent); font-size:1.3rem; font-weight:400}
+  .acc summary .who{font-size:.78rem;color:var(--muted);font-weight:500}
+  .acc summary::after{content:"+";color:var(--accent);font-size:1.3rem;font-weight:400;flex:none}
   .acc[open] summary::after{content:"–"}
-  .acc .body{padding:0 16px 15px; font-size:.92rem; color:var(--ink)}
-  .acc .body .tag{display:inline-block; background:var(--blue-soft); color:var(--blue); font-size:.72rem; font-weight:700; padding:3px 9px; border-radius:999px; margin-bottom:8px}
+  .acc .body{padding:2px 16px 16px}
 
-  .step{display:flex; gap:12px; align-items:flex-start; padding:11px 0; border-top:1px solid var(--line)}
+  /* Typographie "cours" */
+  .lesson-body p{margin:9px 0;font-size:.93rem;line-height:1.6}
+  .lesson-body h4{font-size:.9rem;color:var(--accent);margin:14px 0 4px;font-weight:800}
+  .lesson-body ul{margin:6px 0;padding-left:20px}
+  .lesson-body li{margin:6px 0;font-size:.92rem;line-height:1.55}
+  .lesson-body .kw{font-weight:700}
+  .lesson-body .callout{border-left:4px solid var(--blue);background:var(--blue-soft);border-radius:0 12px 12px 0;padding:10px 14px;margin:12px 0;font-size:.9rem;line-height:1.5}
+  .lesson-body .callout .ct{display:block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--blue);margin-bottom:3px}
+  .lesson-body .callout.ok{border-color:var(--good);background:var(--good-soft)}
+  .lesson-body .callout.ok .ct{color:var(--good)}
+  .lesson-body .callout.warn{border-color:var(--accent);background:var(--accent-soft)}
+  .lesson-body .callout.warn .ct{color:var(--accent)}
+
+  .step{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--line)}
   .step:first-of-type{border-top:none}
-  .num{flex:none; width:30px; height:30px; border-radius:50%; background:var(--accent); color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; font-size:.9rem}
-  .step b{display:block; font-size:.95rem}
-  .step span{font-size:.88rem; color:var(--muted)}
+  .num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+  .step b{display:block;font-size:.95rem}
+  .step span{font-size:.88rem;color:var(--muted)}
 
-  ul.clean{margin:6px 0; padding-left:20px}
-  ul.clean li{margin:7px 0; font-size:.93rem}
+  ul.clean{margin:6px 0;padding-left:20px}
+  ul.clean li{margin:7px 0;font-size:.93rem}
 
-  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px}
-  .chip{border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:.8rem; font-weight:600; padding:8px 12px; border-radius:999px; cursor:pointer}
-  .chip.on{background:var(--accent); color:#fff; border-color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .chip{border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:.8rem;font-weight:600;padding:8px 12px;border-radius:999px;cursor:pointer}
+  .chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
 
-  .search{width:100%; border:1px solid var(--line); background:var(--card); border-radius:12px; padding:12px 14px; font-size:.95rem; margin-bottom:12px; color:var(--ink)}
-  .search:focus{outline:2px solid var(--accent-soft); border-color:var(--accent)}
+  .search{width:100%;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:12px 14px;font-size:.95rem;margin-bottom:12px;color:var(--ink)}
+  .search:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
 
-  .flash{perspective:1200px; height:220px; margin-bottom:12px}
-  .flash-inner{position:relative; width:100%; height:100%; transition:transform .5s; transform-style:preserve-3d; cursor:pointer}
+  .flash{perspective:1200px;height:220px;margin-bottom:12px}
+  .flash-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;cursor:pointer}
   .flash.flipped .flash-inner{transform:rotateY(180deg)}
-  .face{position:absolute; inset:0; backface-visibility:hidden; border-radius:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; text-align:center; border:1px solid var(--line); box-shadow:var(--shadow)}
-  .face .k{font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-bottom:10px}
-  .face .w{font-size:1.7rem; font-weight:800}
-  .face .cat{font-size:.72rem; color:var(--muted); margin-top:10px}
+  .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .face .k{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px}
+  .face .w{font-size:1.7rem;font-weight:800}
+  .face .cat{font-size:.72rem;color:var(--muted);margin-top:10px}
   .front{background:var(--card)}
-  .back{background:var(--accent-soft); transform:rotateY(180deg)}
+  .back{background:var(--accent-soft);transform:rotateY(180deg)}
   .back .w{color:var(--accent)}
-  .nav-row{display:flex; align-items:center; justify-content:space-between; gap:10px}
-  .counter{font-size:.9rem; color:var(--muted); font-weight:600}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .counter{font-size:.9rem;color:var(--muted);font-weight:600}
 
-  button.big{border:none; border-radius:14px; padding:14px 18px; font-size:1rem; font-weight:700; cursor:pointer; background:var(--accent); color:#fff; width:100%}
-  button.big.ghost{background:var(--card); color:var(--ink); border:1px solid var(--line)}
-  .btn-round{border:1px solid var(--line); background:var(--card); width:52px; height:52px; border-radius:50%; font-size:1.4rem; cursor:pointer; color:var(--ink)}
+  button.big{border:none;border-radius:14px;padding:14px 18px;font-size:1rem;font-weight:700;cursor:pointer;background:var(--accent);color:#fff;width:100%}
+  button.big.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+  .btn-round{border:1px solid var(--line);background:var(--card);width:52px;height:52px;border-radius:50%;font-size:1.4rem;cursor:pointer;color:var(--ink)}
 
-  .gitem{border-top:1px solid var(--line); padding:12px 2px}
+  .gitem{border-top:1px solid var(--line);padding:12px 2px}
   .gitem:first-child{border-top:none}
   .gitem b{font-size:.98rem}
-  .gitem .g-cat{float:right; font-size:.68rem; color:var(--muted); background:var(--bg); padding:2px 8px; border-radius:999px}
-  .gitem p{margin:5px 0 0; font-size:.9rem; color:var(--muted)}
+  .gitem .g-cat{float:right;font-size:.68rem;color:var(--muted);background:var(--bg);padding:2px 8px;border-radius:999px}
+  .gitem p{margin:5px 0 0;font-size:.9rem;color:var(--muted)}
 
   .setrow{margin-bottom:14px}
-  .setrow .lbl{font-size:.82rem; font-weight:700; color:var(--muted); margin-bottom:7px; text-transform:uppercase; letter-spacing:.4px}
-  .seg{display:flex; gap:6px; flex-wrap:wrap}
-  .seg button{flex:1; min-width:70px; border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:.86rem; font-weight:600; padding:10px 8px; border-radius:11px; cursor:pointer}
-  .seg button.on{background:var(--accent); color:#fff; border-color:var(--accent)}
-  .qword{font-size:1.55rem; font-weight:800; text-align:center; margin:6px 0 2px}
-  .qsub{text-align:center; color:var(--muted); font-size:.8rem; margin-bottom:16px}
-  .opt{display:block; width:100%; text-align:left; border:1px solid var(--line); background:var(--card); border-radius:14px; padding:14px 16px; font-size:1rem; margin-bottom:10px; cursor:pointer; font-weight:600; transition:.15s}
-  .opt.correct{background:var(--good-soft); border-color:var(--good); color:var(--good)}
-  .opt.wrong{background:var(--bad-soft); border-color:var(--bad); color:var(--bad)}
+  .setrow .lbl{font-size:.82rem;font-weight:700;color:var(--muted);margin-bottom:7px;text-transform:uppercase;letter-spacing:.4px}
+  .seg{display:flex;gap:6px;flex-wrap:wrap}
+  .seg button{flex:1;min-width:70px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:.86rem;font-weight:600;padding:10px 8px;border-radius:11px;cursor:pointer}
+  .seg button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .qword{font-size:1.55rem;font-weight:800;text-align:center;margin:6px 0 2px}
+  .qsub{text-align:center;color:var(--muted);font-size:.8rem;margin-bottom:16px}
+  .opt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:14px 16px;font-size:1rem;margin-bottom:10px;cursor:pointer;font-weight:600;transition:.15s}
+  .opt.correct{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+  .opt.wrong{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
   .opt:disabled{cursor:default}
-  .tinput{width:100%; border:2px solid var(--line); background:var(--card); border-radius:14px; padding:14px 16px; font-size:1.15rem; text-align:center; color:var(--ink); margin-bottom:12px}
-  .tinput:focus{outline:none; border-color:var(--accent)}
-  .qfeedback{text-align:center; font-size:.95rem; font-weight:700; min-height:24px; margin-top:12px}
+  .tinput{width:100%;border:2px solid var(--line);background:var(--card);border-radius:14px;padding:14px 16px;font-size:1.15rem;text-align:center;color:var(--ink);margin-bottom:12px}
+  .tinput:focus{outline:none;border-color:var(--accent)}
+  .qfeedback{text-align:center;font-size:.95rem;font-weight:700;min-height:24px;margin-top:12px}
   .qfeedback.ok{color:var(--good)}
   .qfeedback.no{color:var(--bad)}
-  .qfeedback .corr{display:block; color:var(--ink); font-weight:600; font-size:.9rem; margin-top:4px}
-  .progress-bar{height:8px; background:var(--line); border-radius:999px; overflow:hidden; margin-bottom:16px}
-  .progress-bar>i{display:block; height:100%; background:var(--accent); border-radius:999px; transition:width .3s}
-  .result-big{text-align:center; padding:10px 0}
-  .result-big .score{font-size:3.2rem; font-weight:800; color:var(--accent); line-height:1}
-  .result-big .msg{font-size:1rem; margin-top:8px}
+  .qfeedback .corr{display:block;color:var(--ink);font-weight:600;font-size:.9rem;margin-top:4px}
+  .progress-bar{height:8px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:16px}
+  .progress-bar>i{display:block;height:100%;background:var(--accent);border-radius:999px;transition:width .3s}
+  .result-big{text-align:center;padding:10px 0}
+  .result-big .score{font-size:3.2rem;font-weight:800;color:var(--accent);line-height:1}
+  .result-big .msg{font-size:1rem;margin-top:8px}
 
-  .hero{background:linear-gradient(135deg,var(--accent),#b4553a); color:#fff; border:none}
+  .hero{background:linear-gradient(135deg,var(--accent),#b4553a);color:#fff;border:none}
   .hero h2{color:#fff}
   .hero .lead{color:rgba(255,255,255,.9)}
-  .streak{display:flex; align-items:center; gap:10px; font-size:.95rem; font-weight:600; margin-top:8px}
-  .wotd{display:flex; justify-content:space-between; align-items:center; gap:10px}
-  .wotd .en{font-size:1.25rem; font-weight:800}
-  .wotd .fr{font-size:1.05rem; color:var(--accent); font-weight:700}
-  .quick{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-  .quick button{border:1px solid var(--line); background:var(--card); border-radius:14px; padding:16px 10px; cursor:pointer; font-size:.9rem; font-weight:700; color:var(--ink); display:flex; flex-direction:column; align-items:center; gap:6px; box-shadow:var(--shadow)}
+  .streak{display:flex;align-items:center;gap:10px;font-size:.95rem;font-weight:600;margin-top:8px}
+  .wotd{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .wotd .en{font-size:1.25rem;font-weight:800}
+  .wotd .fr{font-size:1.05rem;color:var(--accent);font-weight:700}
+  .quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .quick button{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:16px 10px;cursor:pointer;font-size:.9rem;font-weight:700;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:6px;box-shadow:var(--shadow)}
   .quick button .qi{font-size:1.6rem}
 
-  .stats{display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap}
-  .stat{flex:1; min-width:70px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 6px; text-align:center; box-shadow:var(--shadow)}
-  .stat .v{font-size:1.4rem; font-weight:800; color:var(--accent)}
-  .stat .l{font-size:.68rem; color:var(--muted); margin-top:2px}
-  .bars{display:flex; align-items:flex-end; gap:6px; height:120px; padding:8px 0; border-bottom:1px solid var(--line); margin-bottom:6px}
-  .bars .b{flex:1; min-width:8px; background:var(--accent-soft); border-radius:6px 6px 0 0; position:relative; display:flex; align-items:flex-end; justify-content:center}
-  .bars .b>i{position:absolute; bottom:0; left:0; right:0; background:var(--accent); border-radius:6px 6px 0 0}
-  .bars .b span{position:relative; font-size:.6rem; color:var(--accent); font-weight:700; margin-bottom:2px}
-  .mrow{display:flex; align-items:center; gap:10px; margin:9px 0}
-  .mrow .mname{width:100px; font-size:.82rem; font-weight:600; flex:none}
-  .mrow .mbar{flex:1; height:9px; background:var(--line); border-radius:999px; overflow:hidden}
-  .mrow .mbar>i{display:block; height:100%; background:var(--good); border-radius:999px}
-  .mrow .mval{width:42px; text-align:right; font-size:.8rem; color:var(--muted); font-weight:700}
-  .hist{list-style:none; padding:0; margin:0}
-  .hist li{display:flex; justify-content:space-between; padding:11px 2px; border-top:1px solid var(--line); font-size:.88rem}
+  .stats{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+  .stat{flex:1;min-width:70px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 6px;text-align:center;box-shadow:var(--shadow)}
+  .stat .v{font-size:1.4rem;font-weight:800;color:var(--accent)}
+  .stat .l{font-size:.68rem;color:var(--muted);margin-top:2px}
+  .bars{display:flex;align-items:flex-end;gap:6px;height:120px;padding:8px 0;border-bottom:1px solid var(--line);margin-bottom:6px}
+  .bars .b{flex:1;min-width:8px;background:var(--accent-soft);border-radius:6px 6px 0 0;position:relative;display:flex;align-items:flex-end;justify-content:center}
+  .bars .b>i{position:absolute;bottom:0;left:0;right:0;background:var(--accent);border-radius:6px 6px 0 0}
+  .bars .b span{position:relative;font-size:.6rem;color:var(--accent);font-weight:700;margin-bottom:2px}
+  .mrow{display:flex;align-items:center;gap:10px;margin:9px 0}
+  .mrow .mname{width:100px;font-size:.82rem;font-weight:600;flex:none}
+  .mrow .mbar{flex:1;height:9px;background:var(--line);border-radius:999px;overflow:hidden}
+  .mrow .mbar>i{display:block;height:100%;background:var(--good);border-radius:999px}
+  .mrow .mval{width:42px;text-align:right;font-size:.8rem;color:var(--muted);font-weight:700}
+  .hist{list-style:none;padding:0;margin:0}
+  .hist li{display:flex;justify-content:space-between;padding:11px 2px;border-top:1px solid var(--line);font-size:.88rem}
   .hist li:first-child{border-top:none}
   .hist .d{color:var(--muted)}
-  .empty{text-align:center; color:var(--muted); padding:24px 10px; font-size:.95rem}
-  .danger{color:var(--bad); background:none; border:none; font-size:.82rem; font-weight:600; cursor:pointer; padding:8px}
+  .empty{text-align:center;color:var(--muted);padding:24px 10px;font-size:.95rem}
+  .danger{color:var(--bad);background:none;border:none;font-size:.82rem;font-weight:600;cursor:pointer;padding:8px}
 
-  .toggle-row{display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-top:1px solid var(--line)}
+  .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-top:1px solid var(--line)}
   .toggle-row:first-of-type{border-top:none}
-  .toggle-row .tl{font-size:.92rem; font-weight:600}
-  .toggle-row .th{font-size:.78rem; color:var(--muted)}
-  .sw{width:52px; height:30px; border-radius:999px; background:var(--line); position:relative; cursor:pointer; border:none; flex:none}
+  .toggle-row .tl{font-size:.92rem;font-weight:600}
+  .toggle-row .th{font-size:.78rem;color:var(--muted)}
+  .sw{width:52px;height:30px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;border:none;flex:none}
   .sw.on{background:var(--good)}
-  .sw::after{content:""; position:absolute; top:3px; left:3px; width:24px; height:24px; border-radius:50%; background:#fff; transition:.2s}
+  .sw::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.2s}
   .sw.on::after{left:25px}
 
-  nav{position:fixed; left:0; right:0; bottom:0; z-index:30; background:rgba(255,255,255,.92); backdrop-filter:saturate(180%) blur(14px); border-top:1px solid var(--line); display:flex; padding-bottom:env(safe-area-inset-bottom)}
-  nav button{flex:1; background:none; border:none; padding:9px 0 8px; cursor:pointer; color:var(--muted); font-size:.63rem; font-weight:600; display:flex; flex-direction:column; align-items:center; gap:3px}
-  nav button .ic{font-size:1.35rem; line-height:1}
+  nav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(14px);border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom)}
+  nav button{flex:1;background:none;border:none;padding:9px 0 8px;cursor:pointer;color:var(--muted);font-size:.63rem;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:3px}
+  nav button .ic{font-size:1.35rem;line-height:1}
   nav button.on{color:var(--accent)}
 </style>
 </head>
@@ -186,10 +192,7 @@
     </div>
     <div class="card">
       <span class="pill">Mot du jour</span>
-      <div class="wotd">
-        <div><div class="en" id="wotdEn">—</div><div class="fr" id="wotdFr">—</div></div>
-        <button class="btn-round" onclick="newWotd()" aria-label="Autre mot">🔀</button>
-      </div>
+      <div class="wotd"><div><div class="en" id="wotdEn">—</div><div class="fr" id="wotdFr">—</div></div><button class="btn-round" onclick="newWotd()" aria-label="Autre mot">🔀</button></div>
     </div>
     <div class="quick">
       <button onclick="go('learn')"><span class="qi">🃏</span>Cartes de vocabulaire</button>
@@ -199,14 +202,8 @@
     </div>
     <div class="card">
       <span class="pill">Confort de lecture</span>
-      <div class="toggle-row">
-        <div><div class="tl">Texte plus grand</div><div class="th">Agrandit toute l'application</div></div>
-        <button class="sw" id="swFont" onclick="toggleFont()" aria-label="Grand texte"></button>
-      </div>
-      <div class="toggle-row">
-        <div><div class="tl">Réduire les animations</div><div class="th">Interface plus calme, sans mouvement</div></div>
-        <button class="sw" id="swCalm" onclick="toggleCalm()" aria-label="Réduire animations"></button>
-      </div>
+      <div class="toggle-row"><div><div class="tl">Texte plus grand</div><div class="th">Agrandit toute l'application</div></div><button class="sw" id="swFont" onclick="toggleFont()" aria-label="Grand texte"></button></div>
+      <div class="toggle-row"><div><div class="tl">Réduire les animations</div><div class="th">Interface plus calme, sans mouvement</div></div><button class="sw" id="swCalm" onclick="toggleCalm()" aria-label="Réduire animations"></button></div>
     </div>
   </section>
 
@@ -223,31 +220,34 @@
     </div>
 
     <div class="panel active" id="p-courants">
-      <div class="card"><span class="pill">S'informer</span><h2>Les grands courants de la psychologie</h2><p class="lead">Les grandes façons d'expliquer le comportement humain. Touche un courant pour le déplier.</p></div>
+      <div class="card"><span class="pill">Cours</span><h2>Les grands courants de la psychologie</h2><p class="lead">La psychologie n'est pas une seule théorie mais plusieurs écoles qui, chacune, éclairent une facette du comportement humain. Touche un courant pour lire la fiche complète.</p></div>
       <div id="approachList"></div>
     </div>
     <div class="panel" id="p-theoriciens">
-      <div class="card"><span class="pill">S'informer</span><h2>Théoriciens clés à connaître</h2><p class="lead">Les noms qui reviennent tout au long de la licence.</p></div>
+      <div class="card"><span class="pill">Cours</span><h2>Les théoriciens clés</h2><p class="lead">Les auteurs qui reviennent tout au long de la licence, avec leur apport détaillé.</p></div>
       <div id="theoristList"></div>
     </div>
     <div class="panel" id="p-experiences">
-      <div class="card"><span class="pill">S'informer</span><h2>Expériences célèbres</h2><p class="lead">Les études fondatrices, souvent citées aux partiels.</p></div>
+      <div class="card"><span class="pill">Cours</span><h2>Les expériences célèbres</h2><p class="lead">Les études fondatrices : contexte, déroulé, résultat, limites et ce qu'il faut retenir.</p></div>
       <div id="expList"></div>
     </div>
     <div class="panel" id="p-methodo">
-      <div class="card"><span class="pill">S'informer</span><h2>Méthodologie & statistiques</h2><p class="lead">L'essentiel pour comprendre une étude et ses résultats.</p></div>
+      <div class="card"><span class="pill">Cours</span><h2>Méthodologie & statistiques</h2><p class="lead">Comment on produit et lit une étude scientifique en psychologie.</p></div>
       <div id="methodoList"></div>
     </div>
     <div class="panel" id="p-avance">
-      <div class="card"><span class="pill">Approfondir</span><h2>Notions à approfondir</h2><p class="lead">Des modèles et repères plus poussés pour aller plus loin.</p></div>
+      <div class="card"><span class="pill">Cours</span><h2>Notions à approfondir</h2><p class="lead">Des modèles plus détaillés pour aller plus loin.</p></div>
       <div id="advList"></div>
     </div>
     <div class="panel" id="p-pnl">
-      <div class="card"><span class="pill">S'informer</span><h2>La PNL en 6 idées</h2><p class="lead">Une boîte à outils pour mieux communiquer et changer ses habitudes.</p><div id="pnlSteps"></div><p style="margin-top:14px; font-size:.82rem; color:var(--muted)"><b>À savoir :</b> la PNL est une méthode de développement personnel, pas une théorie validée scientifiquement. À distinguer des approches reconnues (ex. thérapies cognitivo-comportementales).</p></div>
-      <div class="card"><h2>3 exercices simples</h2><div id="pnlEx"></div></div>
+      <div class="card"><span class="pill">Cours</span><h2>La PNL — dossier complet</h2><p class="lead">Programmation Neuro-Linguistique : origines, présupposés, outils et regard critique.</p></div>
+      <div id="pnlDossier"></div>
+      <div class="card"><h2>Les 6 idées en un coup d'œil</h2><div id="pnlSteps"></div></div>
+      <div class="card"><h2>3 exercices guidés</h2><div id="pnlEx"></div></div>
     </div>
     <div class="panel" id="p-conseils">
-      <div class="card"><span class="pill">Bien réviser</span><h2>Conseils de révision</h2><p class="lead">Des méthodes qui aident particulièrement quand on est visuel·le et qu'on a besoin de repères clairs.</p><div id="tipsList"></div></div>
+      <div class="card"><span class="pill">Cours</span><h2>Bien réviser</h2><p class="lead">Des méthodes efficaces, particulièrement adaptées à un profil visuel qui a besoin de repères clairs.</p></div>
+      <div id="tipsList"></div>
     </div>
   </section>
 
@@ -262,18 +262,12 @@
         <span class="pill">Apprendre</span><h2>Cartes de vocabulaire</h2>
         <p class="lead">Touche la carte pour voir la traduction. Choisis un thème :</p>
         <div class="chips" id="learnChips"></div>
-        <div class="flash" id="flash" onclick="flip()">
-          <div class="flash-inner">
-            <div class="face front"><div class="k">Anglais</div><div class="w" id="frontW">—</div><div class="cat" id="frontCat"></div></div>
-            <div class="face back"><div class="k">Français</div><div class="w" id="backW">—</div></div>
-          </div>
-        </div>
+        <div class="flash" id="flash" onclick="flip()"><div class="flash-inner">
+          <div class="face front"><div class="k">Anglais</div><div class="w" id="frontW">—</div><div class="cat" id="frontCat"></div></div>
+          <div class="face back"><div class="k">Français</div><div class="w" id="backW">—</div></div>
+        </div></div>
         <p class="qsub">👆 Touche la carte pour la retourner</p>
-        <div class="nav-row">
-          <button class="btn-round" onclick="prevCard()" aria-label="Précédent">‹</button>
-          <span class="counter" id="cardCounter">1 / 1</span>
-          <button class="btn-round" onclick="nextCard()" aria-label="Suivant">›</button>
-        </div>
+        <div class="nav-row"><button class="btn-round" onclick="prevCard()" aria-label="Précédent">‹</button><span class="counter" id="cardCounter">1 / 1</span><button class="btn-round" onclick="nextCard()" aria-label="Suivant">›</button></div>
       </div>
     </div>
     <div class="panel" id="p-glossaire">
@@ -308,7 +302,6 @@
       </div></div>
       <button class="big" onclick="startQuiz()">Commencer le quiz</button>
     </div>
-
     <div class="card" id="quizPlay" style="display:none">
       <div class="progress-bar"><i id="qProgress" style="width:0%"></i></div>
       <div class="qsub" id="qCount">Question 1</div>
@@ -321,7 +314,6 @@
         <div class="qfeedback" id="qFeedback"></div>
       </div>
     </div>
-
     <div class="card" id="quizEnd" style="display:none">
       <div class="result-big"><div class="score" id="finalScore">0/10</div><div class="msg" id="finalMsg"></div></div>
       <button class="big" onclick="startQuiz()" style="margin-top:14px">Rejouer</button>
@@ -354,7 +346,7 @@
       <h2>Historique</h2>
       <ul class="hist" id="history"></ul>
       <div id="histEmpty" class="empty">Aucun quiz pour l'instant.<br>Fais ton premier test dans l'onglet « Tester ».</div>
-      <div style="text-align:center; margin-top:10px"><button class="danger" onclick="resetProgress()">Effacer l'historique</button></div>
+      <div style="text-align:center;margin-top:10px"><button class="danger" onclick="resetProgress()">Effacer l'historique</button></div>
     </div>
   </section>
 </main>
@@ -367,318 +359,10 @@
   <button data-tab="progress" onclick="go('progress')"><span class="ic">📈</span>Progrès</button>
 </nav>
 
+<script src="data.js"></script>
 <script>
 /* =====================================================================
-   CONTENU — Tout est ici. Enrichis librement en ajoutant des lignes.
-   Ajouter un mot : { en:"anglais", fr:"français", cat:"Thème" }
-   (garde des traductions FR uniques pour un quiz fiable)
-   ===================================================================== */
-const APP = { title:"Psycho & PNL", subtitle:"Réviser, apprendre et se tester — licence de psychologie" };
-
-const VOCAB = [
-  // Concepts
-  {en:"behaviour", fr:"comportement", cat:"Concepts"},
-  {en:"mind", fr:"esprit", cat:"Concepts"},
-  {en:"cognition", fr:"cognition", cat:"Concepts"},
-  {en:"perception", fr:"perception", cat:"Concepts"},
-  {en:"awareness", fr:"conscience", cat:"Concepts"},
-  {en:"thought", fr:"pensée", cat:"Concepts"},
-  {en:"feeling", fr:"sentiment", cat:"Concepts"},
-  {en:"emotion", fr:"émotion", cat:"Concepts"},
-  {en:"drive", fr:"pulsion", cat:"Concepts"},
-  {en:"instinct", fr:"instinct", cat:"Concepts"},
-  {en:"motivation", fr:"motivation", cat:"Concepts"},
-  {en:"attention", fr:"attention", cat:"Concepts"},
-  {en:"intelligence", fr:"intelligence", cat:"Concepts"},
-  {en:"personality", fr:"personnalité", cat:"Concepts"},
-  {en:"trait", fr:"trait de caractère", cat:"Concepts"},
-  {en:"belief", fr:"croyance", cat:"Concepts"},
-  {en:"learning", fr:"apprentissage", cat:"Concepts"},
-  {en:"memory", fr:"mémoire", cat:"Concepts"},
-  {en:"arousal", fr:"activation / éveil", cat:"Concepts"},
-  {en:"mood", fr:"humeur", cat:"Concepts"},
-  {en:"nature vs nurture", fr:"inné vs acquis", cat:"Concepts"},
-  {en:"unconscious", fr:"inconscient", cat:"Concepts"},
-  {en:"self", fr:"le soi", cat:"Concepts"},
-  {en:"identity", fr:"identité", cat:"Concepts"},
-  {en:"habit", fr:"habitude", cat:"Concepts"},
-  // Cognition
-  {en:"reasoning", fr:"raisonnement", cat:"Cognition"},
-  {en:"problem-solving", fr:"résolution de problèmes", cat:"Cognition"},
-  {en:"decision-making", fr:"prise de décision", cat:"Cognition"},
-  {en:"language", fr:"langage", cat:"Cognition"},
-  {en:"concept", fr:"concept", cat:"Cognition"},
-  {en:"schema", fr:"schéma mental", cat:"Cognition"},
-  {en:"recall", fr:"rappel", cat:"Cognition"},
-  {en:"recognition", fr:"reconnaissance", cat:"Cognition"},
-  {en:"encoding", fr:"encodage", cat:"Cognition"},
-  {en:"retrieval", fr:"récupération", cat:"Cognition"},
-  {en:"forgetting", fr:"oubli", cat:"Cognition"},
-  {en:"working memory", fr:"mémoire de travail", cat:"Cognition"},
-  {en:"bias", fr:"biais", cat:"Cognition"},
-  // Émotions
-  {en:"fear", fr:"peur", cat:"Émotions"},
-  {en:"anger", fr:"colère", cat:"Émotions"},
-  {en:"joy", fr:"joie", cat:"Émotions"},
-  {en:"sadness", fr:"tristesse", cat:"Émotions"},
-  {en:"disgust", fr:"dégoût", cat:"Émotions"},
-  {en:"surprise", fr:"surprise", cat:"Émotions"},
-  {en:"shame", fr:"honte", cat:"Émotions"},
-  {en:"guilt", fr:"culpabilité", cat:"Émotions"},
-  {en:"empathy", fr:"empathie", cat:"Émotions"},
-  // Neurosciences
-  {en:"brain", fr:"cerveau", cat:"Neurosciences"},
-  {en:"neuron", fr:"neurone", cat:"Neurosciences"},
-  {en:"synapse", fr:"synapse", cat:"Neurosciences"},
-  {en:"neurotransmitter", fr:"neurotransmetteur", cat:"Neurosciences"},
-  {en:"dopamine", fr:"dopamine", cat:"Neurosciences"},
-  {en:"serotonin", fr:"sérotonine", cat:"Neurosciences"},
-  {en:"hormone", fr:"hormone", cat:"Neurosciences"},
-  {en:"lobe", fr:"lobe", cat:"Neurosciences"},
-  {en:"cortex", fr:"cortex", cat:"Neurosciences"},
-  {en:"nervous system", fr:"système nerveux", cat:"Neurosciences"},
-  {en:"reflex", fr:"réflexe", cat:"Neurosciences"},
-  {en:"plasticity", fr:"plasticité", cat:"Neurosciences"},
-  // Social
-  {en:"conformity", fr:"conformisme", cat:"Social"},
-  {en:"obedience", fr:"obéissance", cat:"Social"},
-  {en:"attitude", fr:"attitude", cat:"Social"},
-  {en:"stereotype", fr:"stéréotype", cat:"Social"},
-  {en:"prejudice", fr:"préjugé", cat:"Social"},
-  {en:"group", fr:"groupe", cat:"Social"},
-  {en:"norm", fr:"norme", cat:"Social"},
-  {en:"role", fr:"rôle", cat:"Social"},
-  {en:"persuasion", fr:"persuasion", cat:"Social"},
-  {en:"bystander", fr:"témoin passif", cat:"Social"},
-  // Méthodo
-  {en:"research", fr:"recherche", cat:"Méthodo"},
-  {en:"study", fr:"étude", cat:"Méthodo"},
-  {en:"survey", fr:"enquête", cat:"Méthodo"},
-  {en:"questionnaire", fr:"questionnaire", cat:"Méthodo"},
-  {en:"interview", fr:"entretien", cat:"Méthodo"},
-  {en:"sample", fr:"échantillon", cat:"Méthodo"},
-  {en:"hypothesis", fr:"hypothèse", cat:"Méthodo"},
-  {en:"variable", fr:"variable", cat:"Méthodo"},
-  {en:"control group", fr:"groupe contrôle", cat:"Méthodo"},
-  {en:"evidence", fr:"preuves", cat:"Méthodo"},
-  {en:"data", fr:"données", cat:"Méthodo"},
-  {en:"findings", fr:"résultats d'étude", cat:"Méthodo"},
-  {en:"reliability", fr:"fiabilité", cat:"Méthodo"},
-  {en:"validity", fr:"validité", cat:"Méthodo"},
-  {en:"replication", fr:"réplication", cat:"Méthodo"},
-  {en:"peer-reviewed", fr:"évalué par les pairs", cat:"Méthodo"},
-  {en:"framework", fr:"cadre théorique", cat:"Méthodo"},
-  {en:"consent", fr:"consentement", cat:"Méthodo"},
-  {en:"ethics", fr:"éthique", cat:"Méthodo"},
-  {en:"placebo", fr:"placebo", cat:"Méthodo"},
-  {en:"double-blind", fr:"double aveugle", cat:"Méthodo"},
-  {en:"longitudinal", fr:"longitudinal", cat:"Méthodo"},
-  {en:"cross-sectional", fr:"transversal", cat:"Méthodo"},
-  {en:"qualitative", fr:"qualitatif", cat:"Méthodo"},
-  {en:"quantitative", fr:"quantitatif", cat:"Méthodo"},
-  {en:"generalisation", fr:"généralisation", cat:"Méthodo"},
-  {en:"confound", fr:"variable parasite", cat:"Méthodo"},
-  // Stats
-  {en:"mean", fr:"moyenne", cat:"Stats"},
-  {en:"median", fr:"médiane", cat:"Stats"},
-  {en:"range", fr:"étendue", cat:"Stats"},
-  {en:"standard deviation", fr:"écart-type", cat:"Stats"},
-  {en:"correlation", fr:"corrélation", cat:"Stats"},
-  {en:"significant", fr:"significatif", cat:"Stats"},
-  {en:"frequency", fr:"fréquence", cat:"Stats"},
-  {en:"probability", fr:"probabilité", cat:"Stats"},
-  {en:"pattern", fr:"tendance", cat:"Stats"},
-  {en:"p-value", fr:"valeur p", cat:"Stats"},
-  {en:"effect size", fr:"taille d'effet", cat:"Stats"},
-  {en:"t-test", fr:"test t", cat:"Stats"},
-  {en:"regression", fr:"régression", cat:"Stats"},
-  {en:"distribution", fr:"distribution", cat:"Stats"},
-  {en:"outlier", fr:"valeur aberrante", cat:"Stats"},
-  {en:"variance", fr:"variance", cat:"Stats"},
-  // Clinique
-  {en:"disorder", fr:"trouble", cat:"Clinique"},
-  {en:"assessment", fr:"évaluation", cat:"Clinique"},
-  {en:"diagnosis", fr:"diagnostic", cat:"Clinique"},
-  {en:"symptom", fr:"symptôme", cat:"Clinique"},
-  {en:"treatment", fr:"traitement", cat:"Clinique"},
-  {en:"therapy", fr:"thérapie", cat:"Clinique"},
-  {en:"coping", fr:"faire face", cat:"Clinique"},
-  {en:"anxiety", fr:"anxiété", cat:"Clinique"},
-  {en:"depression", fr:"dépression", cat:"Clinique"},
-  {en:"stress", fr:"stress", cat:"Clinique"},
-  {en:"trauma", fr:"traumatisme", cat:"Clinique"},
-  {en:"resilience", fr:"résilience", cat:"Clinique"},
-  {en:"grief", fr:"deuil", cat:"Clinique"},
-  {en:"wellbeing", fr:"bien-être", cat:"Clinique"},
-  {en:"self-esteem", fr:"estime de soi", cat:"Clinique"},
-  {en:"mindfulness", fr:"pleine conscience", cat:"Clinique"},
-  {en:"phobia", fr:"phobie", cat:"Clinique"},
-  {en:"addiction", fr:"addiction", cat:"Clinique"},
-  {en:"burnout", fr:"épuisement professionnel", cat:"Clinique"},
-  {en:"relapse", fr:"rechute", cat:"Clinique"},
-  {en:"prognosis", fr:"pronostic", cat:"Clinique"},
-  {en:"remission", fr:"rémission", cat:"Clinique"},
-  // Développement
-  {en:"development", fr:"développement", cat:"Développement"},
-  {en:"infancy", fr:"petite enfance", cat:"Développement"},
-  {en:"childhood", fr:"enfance", cat:"Développement"},
-  {en:"adolescence", fr:"adolescence", cat:"Développement"},
-  {en:"ageing", fr:"vieillissement", cat:"Développement"},
-  {en:"milestone", fr:"étape clé", cat:"Développement"},
-  {en:"caregiver", fr:"aidant", cat:"Développement"},
-  {en:"attachment", fr:"attachement", cat:"Développement"},
-  {en:"reinforcement", fr:"renforcement", cat:"Développement"},
-  {en:"conditioning", fr:"conditionnement", cat:"Développement"},
-  {en:"puberty", fr:"puberté", cat:"Développement"},
-  {en:"maturation", fr:"maturation", cat:"Développement"},
-  {en:"temperament", fr:"tempérament", cat:"Développement"},
-  // Verbes
-  {en:"to assess", fr:"évaluer", cat:"Verbes"},
-  {en:"to measure", fr:"mesurer", cat:"Verbes"},
-  {en:"to assume", fr:"supposer", cat:"Verbes"},
-  {en:"to suggest", fr:"suggérer", cat:"Verbes"},
-  {en:"to highlight", fr:"mettre en évidence", cat:"Verbes"},
-  {en:"to investigate", fr:"enquêter sur", cat:"Verbes"},
-  {en:"to conduct", fr:"mener une étude", cat:"Verbes"},
-  {en:"to compare", fr:"comparer", cat:"Verbes"},
-  {en:"to conclude", fr:"conclure", cat:"Verbes"},
-  {en:"to predict", fr:"prédire", cat:"Verbes"},
-  {en:"to influence", fr:"influencer", cat:"Verbes"},
-  {en:"to be aware of", fr:"avoir conscience de", cat:"Verbes"},
-  {en:"to observe", fr:"observer", cat:"Verbes"},
-  {en:"to record", fr:"enregistrer", cat:"Verbes"},
-  {en:"to replicate", fr:"reproduire", cat:"Verbes"},
-  {en:"to demonstrate", fr:"démontrer", cat:"Verbes"},
-  {en:"to reject", fr:"rejeter", cat:"Verbes"},
-  {en:"to reveal", fr:"révéler", cat:"Verbes"}
-];
-
-const GLOSSARY = [
-  {term:"Cognition", cat:"Concepts", def:"L'ensemble des processus mentaux : perception, attention, mémoire, langage, raisonnement."},
-  {term:"Attachement", cat:"Développement", def:"Lien affectif durable, surtout entre l'enfant et la personne qui s'en occupe (Bowlby)."},
-  {term:"Résilience", cat:"Clinique", def:"Capacité à se reconstruire après une épreuve difficile."},
-  {term:"Biais cognitif", cat:"Cognition", def:"Erreur systématique de raisonnement qui éloigne du jugement rationnel."},
-  {term:"Biais de confirmation", cat:"Cognition", def:"Tendance à ne retenir que ce qui confirme ce qu'on croit déjà."},
-  {term:"Renforcement", cat:"Apprentissage", def:"Conséquence qui augmente la probabilité qu'un comportement se répète (Skinner)."},
-  {term:"Conditionnement opérant", cat:"Apprentissage", def:"Apprentissage où le comportement est modelé par ses conséquences (récompense/punition)."},
-  {term:"Empathie", cat:"Relation", def:"Capacité à comprendre et ressentir les émotions d'autrui."},
-  {term:"Inconscient", cat:"Psychanalyse", def:"Partie de l'esprit hors de la conscience qui influence nos actes (Freud)."},
-  {term:"Pulsion", cat:"Psychanalyse", def:"Force psychique interne qui pousse à agir (Freud)."},
-  {term:"Homéostasie", cat:"Biologie", def:"Maintien de l'équilibre interne de l'organisme (température, faim…)."},
-  {term:"Plasticité cérébrale", cat:"Neurosciences", def:"Capacité du cerveau à se réorganiser et créer de nouvelles connexions."},
-  {term:"Système limbique", cat:"Neurosciences", def:"Structures cérébrales impliquées dans les émotions et la mémoire."},
-  {term:"Conditionnement", cat:"Apprentissage", def:"Apprentissage par association entre un stimulus et une réponse."},
-  {term:"Perception", cat:"Cognition", def:"Façon dont on interprète les informations captées par nos sens."},
-  {term:"Mémoire de travail", cat:"Cognition", def:"Mémoire à court terme pour garder et manipuler une info quelques secondes."},
-  {term:"Métacognition", cat:"Cognition", def:"Réfléchir sur sa propre façon de penser et d'apprendre."},
-  {term:"Effet de test", cat:"Cognition", def:"On mémorise mieux en se testant qu'en relisant passivement."},
-  {term:"Trouble du spectre de l'autisme (TSA)", cat:"Clinique", def:"Trouble neurodéveloppemental touchant la communication et les interactions, avec des intérêts spécifiques et un besoin de repères et de routines."},
-  {term:"DSM-5", cat:"Clinique", def:"Manuel diagnostique et statistique des troubles mentaux (APA), référence pour classer les troubles."},
-  {term:"Effet placebo", cat:"Clinique", def:"Amélioration due à la croyance en un traitement, sans principe actif réel."},
-  {term:"Neurone", cat:"Neurosciences", def:"Cellule de base du système nerveux qui transmet l'information."},
-  {term:"Stress", cat:"Clinique", def:"Réponse de l'organisme face à une demande ou une menace perçue."},
-  {term:"Estime de soi", cat:"Clinique", def:"Valeur et respect qu'une personne s'accorde à elle-même."},
-  {term:"Corrélation", cat:"Stats", def:"Lien statistique entre deux variables. Attention : corrélation n'est pas causalité."},
-  {term:"Validité", cat:"Méthodo", def:"Un test est valide s'il mesure réellement ce qu'il prétend mesurer."},
-  {term:"Fiabilité", cat:"Méthodo", def:"Un test est fiable s'il donne des résultats stables quand on le répète."},
-  {term:"Zone proximale de développement", cat:"Développement", def:"Écart entre ce que l'enfant sait faire seul et avec de l'aide (Vygotski)."},
-  {term:"Motivation", cat:"Concepts", def:"Ensemble des forces qui poussent une personne à agir et persévérer."}
-];
-
-const APPROACHES = [
-  {name:"Psychanalyse", who:"Freud", idea:"L'inconscient gouverne une partie de nos actes.",
-   points:["Structure de l'esprit : ça, moi, surmoi","Pulsions, rêves, mécanismes de défense","À l'origine de la psychologie clinique"]},
-  {name:"Behaviorisme", who:"Watson, Skinner", idea:"Seul le comportement observable compte.",
-   points:["Conditionnement classique (Pavlov)","Conditionnement opérant : récompense / punition","On étudie ce qui se mesure, pas la pensée"]},
-  {name:"Cognitivisme", who:"Neisser", idea:"L'esprit traite l'information comme un système.",
-   points:["Perception, attention, mémoire, langage","Métaphore de l'ordinateur","Base des sciences cognitives actuelles"]},
-  {name:"Humanisme", who:"Rogers, Maslow", idea:"L'humain tend naturellement à se réaliser.",
-   points:["Écoute, empathie, respect de la personne","Pyramide des besoins (Maslow)","Approche centrée sur la personne (Rogers)"]},
-  {name:"Approche développementale", who:"Piaget", idea:"L'intelligence se construit par étapes.",
-   points:["Sensori-moteur (0–2 ans)","Préopératoire (2–7 ans)","Opératoire concret (7–11 ans)","Opératoire formel (11 ans et +)"]},
-  {name:"Neurosciences", who:"approche biologique", idea:"Le cerveau et la biologie expliquent le comportement.",
-   points:["Neurones, neurotransmetteurs","Imagerie cérébrale (IRM)","Plasticité du cerveau"]},
-  {name:"Psychologie sociale", who:"Bandura, Milgram", idea:"Le groupe et le contexte influencent l'individu.",
-   points:["Apprentissage social par imitation (Bandura)","Conformisme et soumission (Milgram, Asch)","Influence des normes de groupe"]},
-  {name:"Thérapies cognitivo-comportementales (TCC)", who:"approche validée", idea:"Changer pensées et comportements pour aller mieux.",
-   points:["Efficacité démontrée scientifiquement","Objectifs concrets et mesurables","Très utilisées aujourd'hui"]}
-];
-
-const THEORISTS = [
-  {name:"Sigmund Freud", years:"1856–1939", field:"Psychanalyse", note:"Inconscient, pulsions, structure ça/moi/surmoi. Fondateur de la psychanalyse."},
-  {name:"Ivan Pavlov", years:"1849–1936", field:"Behaviorisme", note:"Conditionnement classique : le chien qui salive au son de la cloche."},
-  {name:"B. F. Skinner", years:"1904–1990", field:"Behaviorisme", note:"Conditionnement opérant : le comportement dépend de ses conséquences."},
-  {name:"Jean Piaget", years:"1896–1980", field:"Développement", note:"Les 4 stades du développement cognitif de l'enfant."},
-  {name:"Lev Vygotski", years:"1896–1934", field:"Développement", note:"Rôle du social et du langage ; zone proximale de développement."},
-  {name:"Abraham Maslow", years:"1908–1970", field:"Humanisme", note:"Pyramide des besoins, du physiologique à l'accomplissement de soi."},
-  {name:"Carl Rogers", years:"1902–1987", field:"Humanisme", note:"Approche centrée sur la personne : empathie, écoute active, non-jugement."},
-  {name:"John Bowlby", years:"1907–1990", field:"Développement", note:"Théorie de l'attachement : l'importance du lien parent-enfant."},
-  {name:"Albert Bandura", years:"1925–2021", field:"Social", note:"Apprentissage social : on apprend en observant (poupée Bobo)."},
-  {name:"Stanley Milgram", years:"1933–1984", field:"Social", note:"Expérience sur la soumission à l'autorité."},
-  {name:"Erik Erikson", years:"1902–1994", field:"Développement", note:"Les 8 stades psychosociaux, de la naissance à la vieillesse."},
-  {name:"Elizabeth Loftus", years:"née en 1944", field:"Cognition", note:"Mémoire et faux souvenirs ; fiabilité des témoignages."},
-  {name:"Daniel Kahneman", years:"1934–2024", field:"Cognition", note:"Biais cognitifs ; pensée rapide (système 1) et lente (système 2)."}
-];
-
-const EXPERIMENTS = [
-  {name:"Le chien de Pavlov", who:"Pavlov", year:"~1900", d:"En associant une cloche à la nourriture, le chien finit par saliver au seul son de la cloche. → conditionnement classique."},
-  {name:"Le petit Albert", who:"Watson", year:"1920", d:"On conditionne la peur d'un rat blanc chez un bébé en l'associant à un bruit effrayant. → les émotions s'apprennent. (Étude aujourd'hui jugée non éthique.)"},
-  {name:"La boîte de Skinner", who:"Skinner", year:"~1935", d:"Un rat apprend à appuyer sur un levier pour obtenir de la nourriture. → conditionnement opérant (renforcement)."},
-  {name:"Les singes de Harlow", who:"Harlow", year:"1958", d:"De jeunes singes préfèrent une « mère » douce en tissu à une « mère » en fil de fer qui pourtant les nourrit. → besoin de réconfort et d'attachement."},
-  {name:"La poupée Bobo", who:"Bandura", year:"1961", d:"Des enfants qui voient un adulte frapper une poupée l'imitent ensuite. → apprentissage social par imitation."},
-  {name:"La soumission à l'autorité", who:"Milgram", year:"1963", d:"Des participants ordinaires infligent (en apparence) des chocs à autrui sur ordre d'un expérimentateur. → le poids de l'autorité."},
-  {name:"Le conformisme", who:"Asch", year:"1951", d:"Face à un groupe donnant une réponse fausse, beaucoup s'y rallient. → pression du groupe."},
-  {name:"La prison de Stanford", who:"Zimbardo", year:"1971", d:"Des étudiants jouant gardiens/prisonniers adoptent des comportements extrêmes. → pouvoir des rôles sociaux. (Étude très critiquée sur le plan méthodologique.)"},
-  {name:"Les faux souvenirs", who:"Loftus", year:"1974", d:"La formulation d'une question modifie le souvenir d'un accident. → la mémoire se reconstruit."}
-];
-
-const METHODO = [
-  {title:"La démarche scientifique", points:["1. Question et hypothèse","2. Étude pour recueillir des données","3. Analyse des résultats","4. Conclusion (l'hypothèse est-elle soutenue ?)"]},
-  {title:"Les types d'études", points:["Expérimentale : on manipule une variable","Corrélationnelle : on observe un lien entre deux mesures","Observationnelle : on observe sans intervenir","Étude de cas : analyse approfondie d'une personne"]},
-  {title:"Les variables", points:["Variable indépendante (VI) : celle qu'on manipule","Variable dépendante (VD) : celle qu'on mesure","Variables parasites : à contrôler pour ne pas fausser"]},
-  {title:"Statistiques de base", points:["Moyenne : la valeur centrale","Écart-type : la dispersion autour de la moyenne","Corrélation : lien entre deux variables (≠ cause !)","« Significatif » (p < .05) : peu probable dû au hasard"]},
-  {title:"Fiabilité, validité, éthique", points:["Fiabilité : résultats stables et reproductibles","Validité : on mesure bien ce qu'on veut mesurer","Éthique : consentement, anonymat, respect des participants"]}
-];
-
-const ADVANCED = [
-  {title:"Les modèles de la mémoire", points:["Modèle d'Atkinson-Shiffrin : sensorielle → court terme → long terme","Mémoire de travail (Baddeley) : boucle phonologique, calepin visuo-spatial, administrateur central","3 étapes clés : encodage → stockage → récupération"]},
-  {title:"Les 8 stades d'Erikson (psychosocial)", points:["Confiance / méfiance (bébé)","Autonomie / honte (petit enfant)","Initiative / culpabilité","Compétence / infériorité (enfance)","Identité / confusion (adolescence)","Intimité / isolement (jeune adulte)","Générativité / stagnation (adulte)","Intégrité / désespoir (vieillesse)"]},
-  {title:"Le développement moral (Kohlberg)", points:["Préconventionnel : éviter la punition, obtenir une récompense","Conventionnel : respecter les règles et l'approbation d'autrui","Postconventionnel : principes éthiques personnels"]},
-  {title:"La pyramide des besoins (Maslow)", points:["1. Physiologiques (manger, dormir)","2. Sécurité","3. Appartenance et amour","4. Estime","5. Accomplissement de soi"]},
-  {title:"Le cerveau en bref", points:["Lobe frontal : décision, planification, langage","Lobe pariétal : toucher, repérage dans l'espace","Lobe temporal : audition, mémoire","Lobe occipital : vision","Système limbique : émotions"]},
-  {title:"Les neurotransmetteurs", points:["Dopamine : motivation, plaisir, récompense","Sérotonine : humeur, sommeil","GABA : apaisement, réduction de l'anxiété","Acétylcholine : mémoire, attention"]},
-  {title:"Les statistiques inférentielles", points:["Test t de Student : comparer 2 moyennes","ANOVA : comparer 3 groupes ou plus","Chi² : comparer des effectifs / catégories","r de Pearson : force d'une corrélation (−1 à +1)","p < .05 : résultat significatif","Taille d'effet : ampleur réelle du résultat"]},
-  {title:"Classer les troubles : DSM-5 & CIM-11", points:["DSM-5 : manuel américain (APA) des troubles mentaux","CIM-11 : classification de l'OMS, plus large (toutes maladies)","Servent à poser des diagnostics communs et comparables"]}
-];
-
-const PNL = [
-  {t:"La carte ≠ le réel", d:"Chacun voit le monde à sa façon. Ma vision n'est pas LA vérité, donc on peut la changer."},
-  {t:"VAKOG", d:"On pense en images, sons et sensations. Plutôt visuelle : appuie-toi sur des images."},
-  {t:"Objectif clair", d:"Un but précis, positif et réaliste : savoir exactement où l'on va."},
-  {t:"L'ancrage", d:"Associer un geste simple à un état positif (calme, confiance) pour le retrouver quand on veut."},
-  {t:"Le recadrage", d:"Changer le sens qu'on donne à une situation : la voir autrement."},
-  {t:"La synchronisation", d:"Se mettre au rythme de l'autre (ton, gestes) pour créer un lien de confiance."}
-];
-const PNL_EX = [
-  {t:"Créer une ancre de calme", d:"Repense à un moment où tu te sentais confiante. Revis-le intensément (images, sons, sensations), puis serre le poing. Répète 3 fois. Plus tard, serre le poing pour rappeler cet état."},
-  {t:"Recadrer une contrariété", d:"Face à une difficulté, demande-toi : « Qu'est-ce que cette situation peut m'apprendre ou avoir d'utile ? » Tu changes le sens, pas les faits."},
-  {t:"Formuler un objectif", d:"Dis-le au positif (« je veux… » plutôt que « je ne veux plus… »), rends-le précis, et vérifie qu'il dépend bien de toi."}
-];
-
-const TIPS = [
-  {t:"Découpe en petits blocs", d:"Révise 20–25 min, puis fais une pause de 5 min (technique Pomodoro). Plus efficace et moins fatigant."},
-  {t:"Utilise les couleurs", d:"Une couleur par thème. La mémoire visuelle retient mieux ce qui est coloré et organisé."},
-  {t:"Fais des cartes mentales", d:"Remplace les longs textes par des schémas avec des branches : plus clair pour un esprit visuel."},
-  {t:"Répète de façon espacée", d:"Revois un mot le jour même, puis 1 jour après, 3 jours, 1 semaine. On retient bien plus longtemps."},
-  {t:"Garde une routine fixe", d:"Même endroit, même horaire. La routine réduit la charge mentale et sécurise."},
-  {t:"Transforme en images", d:"Associe chaque concept à une image concrète ou une petite scène."},
-  {t:"Teste-toi (ne relis pas juste)", d:"Se tester ancre bien mieux la mémoire que relire ses notes. D'où les quiz de l'appli."},
-  {t:"Un seul objectif par séance", d:"Un but clair et unique évite la surcharge et donne un sentiment de réussite."},
-  {t:"Soigne ton environnement", d:"Casque anti-bruit, bureau rangé, peu de distractions visuelles : plus facile de se concentrer."}
-];
-
-/* =====================================================================
-   LOGIQUE
+   LOGIQUE (le contenu des cours et du vocabulaire est dans data.js)
    ===================================================================== */
 const $ = id => document.getElementById(id);
 document.title = APP.title; $('appTitle').textContent=APP.title; $('appSub').textContent=APP.subtitle;
@@ -706,26 +390,19 @@ function learnTab(p){
   window.scrollTo(0,0);
 }
 
-// Contenus statiques
-$('approachList').innerHTML = APPROACHES.map(a=>
-  `<details class="acc"><summary><span>${a.name}<span class="who"><br>${a.who}</span></span></summary>
-   <div class="body"><span class="tag">Idée clé</span><br>${a.idea}
-   <ul class="clean">${a.points.map(p=>`<li>${p}</li>`).join('')}</ul></div></details>`).join('');
-$('theoristList').innerHTML = THEORISTS.map(t=>
-  `<details class="acc"><summary><span>${t.name}<span class="who"><br>${t.field} · ${t.years}</span></span></summary>
-   <div class="body">${t.note}</div></details>`).join('');
-$('expList').innerHTML = EXPERIMENTS.map(e=>
-  `<details class="acc"><summary><span>${e.name}<span class="who"><br>${e.who} · ${e.year}</span></span></summary>
-   <div class="body">${e.d}</div></details>`).join('');
-$('methodoList').innerHTML = METHODO.map(m=>
-  `<div class="card"><h3 style="margin-top:0">${m.title}</h3><ul class="clean">${m.points.map(p=>`<li>${p}</li>`).join('')}</ul></div>`).join('');
-$('advList').innerHTML = ADVANCED.map(m=>
-  `<details class="acc"><summary>${m.title}</summary><div class="body"><ul class="clean">${m.points.map(p=>`<li>${p}</li>`).join('')}</ul></div></details>`).join('');
-$('pnlSteps').innerHTML = PNL.map((s,i)=>
-  `<div class="step"><div class="num">${i+1}</div><div><b>${s.t}</b><span>${s.d}</span></div></div>`).join('');
-$('pnlEx').innerHTML = PNL_EX.map(e=>`<details class="acc"><summary>${e.t}</summary><div class="body">${e.d}</div></details>`).join('');
-$('tipsList').innerHTML = TIPS.map((t,i)=>
-  `<div class="step"><div class="num">${i+1}</div><div><b>${t.t}</b><span>${t.d}</span></div></div>`).join('');
+// Rendu des cours
+function accordions(items){ return items.map(it=>`<details class="acc"><summary><span>${it.title}${it.sub?`<span class="who"><br>${it.sub}</span>`:''}</span></summary><div class="body lesson-body">${it.body}</div></details>`).join(''); }
+function docs(items){ return items.map(it=>`<div class="card"><h3 style="margin-top:0">${it.title}</h3><div class="lesson-body">${it.body}</div></div>`).join(''); }
+
+$('approachList').innerHTML = accordions(COURANTS);
+$('theoristList').innerHTML = accordions(THEORICIENS);
+$('expList').innerHTML = accordions(EXPERIENCES);
+$('methodoList').innerHTML = docs(METHODO);
+$('advList').innerHTML = docs(ADVANCED);
+$('pnlDossier').innerHTML = docs(PNL_DOSSIER);
+$('tipsList').innerHTML = accordions(TIPS);
+$('pnlSteps').innerHTML = PNL.map((s,i)=>`<div class="step"><div class="num">${i+1}</div><div><b>${s.t}</b><span>${s.d}</span></div></div>`).join('');
+$('pnlEx').innerHTML = PNL_EX.map(e=>`<details class="acc"><summary>${e.t}</summary><div class="body lesson-body">${e.d}</div></details>`).join('');
 
 // Accueil
 function renderHome(){
@@ -734,32 +411,21 @@ function renderHome(){
   $('streakTxt').textContent = st.streak>0 ? (st.streak+' jour'+(st.streak>1?'s':'')+' de suite — continue !') : "Fais un quiz pour lancer ta série";
   showWotd(wotdIndex());
 }
-let wotdI=0;
 function wotdIndex(){ const n=new Date(),s=new Date(n.getFullYear(),0,0); return Math.floor((n-s)/86400000)%VOCAB.length; }
-function showWotd(i){ wotdI=i; $('wotdEn').textContent=VOCAB[i].en; $('wotdFr').textContent=VOCAB[i].fr; }
+function showWotd(i){ $('wotdEn').textContent=VOCAB[i].en; $('wotdFr').textContent=VOCAB[i].fr; }
 function newWotd(){ showWotd(Math.floor(Math.random()*VOCAB.length)); }
 
 // Confort
 function loadPrefs(){ try{ return JSON.parse(localStorage.getItem('psycho_prefs'))||{}; }catch(e){ return {}; } }
 function savePrefs(p){ localStorage.setItem('psycho_prefs', JSON.stringify(p)); }
-function applyPrefs(){
-  const p=loadPrefs();
-  document.documentElement.style.setProperty('--fs', p.bigFont?'18.5px':'16px');
-  document.body.classList.toggle('calm', !!p.calm);
-  $('swFont').classList.toggle('on', !!p.bigFont);
-  $('swCalm').classList.toggle('on', !!p.calm);
-}
+function applyPrefs(){ const p=loadPrefs(); document.documentElement.style.setProperty('--fs', p.bigFont?'18.5px':'16px'); document.body.classList.toggle('calm', !!p.calm); $('swFont').classList.toggle('on', !!p.bigFont); $('swCalm').classList.toggle('on', !!p.calm); }
 function toggleFont(){ const p=loadPrefs(); p.bigFont=!p.bigFont; savePrefs(p); applyPrefs(); }
 function toggleCalm(){ const p=loadPrefs(); p.calm=!p.calm; savePrefs(p); applyPrefs(); }
 
 // Cartes
 let cards=[], idx=0;
-$('learnChips').innerHTML = ['Tous',...CATS].map(c=>
-  `<button class="chip${c==='Tous'?' on':''}" data-cat="${c}" onclick="setCat('${c}')">${c}</button>`).join('');
-function setCat(c){
-  document.querySelectorAll('#learnChips .chip').forEach(b=>b.classList.toggle('on', b.dataset.cat===c));
-  cards=(c==='Tous')?VOCAB.slice():VOCAB.filter(v=>v.cat===c); idx=0; showCard();
-}
+$('learnChips').innerHTML = ['Tous',...CATS].map(c=>`<button class="chip${c==='Tous'?' on':''}" data-cat="${c}" onclick="setCat('${c}')">${c}</button>`).join('');
+function setCat(c){ document.querySelectorAll('#learnChips .chip').forEach(b=>b.classList.toggle('on', b.dataset.cat===c)); cards=(c==='Tous')?VOCAB.slice():VOCAB.filter(v=>v.cat===c); idx=0; showCard(); }
 function showCard(){ const c=cards[idx]; $('flash').classList.remove('flipped'); $('frontW').textContent=c.en; $('frontCat').textContent=c.cat; $('backW').textContent=c.fr; $('cardCounter').textContent=(idx+1)+' / '+cards.length; }
 function flip(){ $('flash').classList.toggle('flipped'); }
 function nextCard(){ idx=(idx+1)%cards.length; showCard(); }
@@ -767,35 +433,20 @@ function prevCard(){ idx=(idx-1+cards.length)%cards.length; showCard(); }
 setCat('Tous');
 
 // Glossaire
-function renderGlossary(){
-  const q=($('gSearch').value||'').toLowerCase().trim();
-  const list=GLOSSARY.filter(g=>!q||g.term.toLowerCase().includes(q)||g.def.toLowerCase().includes(q)).sort((a,b)=>a.term.localeCompare(b.term,'fr'));
-  $('glossaryList').innerHTML = list.length?list.map(g=>`<div class="gitem"><b>${g.term}</b><span class="g-cat">${g.cat}</span><p>${g.def}</p></div>`).join(''):'<div class="empty">Aucun résultat.</div>';
-}
+function renderGlossary(){ const q=($('gSearch').value||'').toLowerCase().trim(); const list=GLOSSARY.filter(g=>!q||g.term.toLowerCase().includes(q)||g.def.toLowerCase().includes(q)).sort((a,b)=>a.term.localeCompare(b.term,'fr')); $('glossaryList').innerHTML = list.length?list.map(g=>`<div class="gitem"><b>${g.term}</b><span class="g-cat">${g.cat}</span><p>${g.def}</p></div>`).join(''):'<div class="empty">Aucun résultat.</div>'; }
 renderGlossary();
 
 // Quiz
 const opt={mode:'qcm', dir:'enfr', cat:'Tous', len:10};
 $('segCat').innerHTML = ['Tous',...CATS].map(c=>`<button class="${c==='Tous'?'on':''}" data-v="${c}" onclick="setOpt('cat','${c}')">${c}</button>`).join('');
-function setOpt(k,v){
-  opt[k]=v;
-  const seg={mode:'segMode',dir:'segDir',cat:'segCat',len:'segLen'}[k];
-  document.querySelectorAll('#'+seg+' button').forEach(b=>b.classList.toggle('on', b.dataset.v==String(v)));
-}
+function setOpt(k,v){ opt[k]=v; const seg={mode:'segMode',dir:'segDir',cat:'segCat',len:'segLen'}[k]; document.querySelectorAll('#'+seg+' button').forEach(b=>b.classList.toggle('on', b.dataset.v==String(v))); }
 let quiz=[], qi=0, qScore=0, sessionLog=[], answered=false;
 function backToQuizStart(){ $('quizEnd').style.display='none'; $('quizStart').style.display='block'; }
-function startQuiz(){
-  let pool=opt.cat==='Tous'?VOCAB.slice():VOCAB.filter(v=>v.cat===opt.cat);
-  quiz=shuffle(pool).slice(0,Math.min(opt.len,pool.length));
-  qi=0; qScore=0; sessionLog=[];
-  $('quizStart').style.display='none'; $('quizEnd').style.display='none'; $('quizPlay').style.display='block';
-  renderQuestion(); window.scrollTo(0,0);
-}
+function startQuiz(){ let pool=opt.cat==='Tous'?VOCAB.slice():VOCAB.filter(v=>v.cat===opt.cat); quiz=shuffle(pool).slice(0,Math.min(opt.len,pool.length)); qi=0; qScore=0; sessionLog=[]; $('quizStart').style.display='none'; $('quizEnd').style.display='none'; $('quizPlay').style.display='block'; renderQuestion(); window.scrollTo(0,0); }
 function pField(){ return opt.dir==='enfr'?'en':'fr'; }
 function aField(){ return opt.dir==='enfr'?'fr':'en'; }
 function renderQuestion(){
-  answered=false;
-  const q=quiz[qi];
+  answered=false; const q=quiz[qi];
   $('qCount').textContent=`Question ${qi+1} / ${quiz.length}`;
   $('qProgress').style.width=(qi/quiz.length*100)+'%';
   $('qWord').textContent=q[pField()];
@@ -815,50 +466,30 @@ function renderQuestion(){
   }
 }
 function answer(btn, correct){
-  if(answered) return; answered=true;
-  const q=quiz[qi];
+  if(answered) return; answered=true; const q=quiz[qi];
   document.querySelectorAll('#qOptions .opt').forEach(b=>b.disabled=true);
   if(correct){ btn.classList.add('correct'); qScore++; }
   else{ btn.classList.add('wrong'); const good=q[aField()]; document.querySelectorAll('#qOptions .opt').forEach(b=>{ if(b.textContent===good) b.classList.add('correct'); }); }
-  sessionLog.push({cat:q.cat, correct:!!correct});
-  setTimeout(nextStep, 850);
+  sessionLog.push({cat:q.cat, correct:!!correct}); setTimeout(nextStep, 850);
 }
-// Normalisation souple pour le mode saisie
 function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim(); }
-function acceptedSet(ans){
-  const set=new Set(); const variants=ans.split('/').map(x=>x.trim());
-  variants.forEach(v=>{
-    const clean=v.replace(/\(.*?\)/g,'').trim();
-    [v,clean].forEach(x=>{
-      set.add(norm(x));
-      if(norm(x).startsWith('to ')) set.add(norm(x).slice(3)); // "to assess" -> "assess"
-    });
-  });
-  set.delete('');
-  return set;
-}
+function acceptedSet(ans){ const set=new Set(); ans.split('/').map(x=>x.trim()).forEach(v=>{ const clean=v.replace(/\(.*?\)/g,'').trim(); [v,clean].forEach(x=>{ set.add(norm(x)); if(norm(x).startsWith('to ')) set.add(norm(x).slice(3)); }); }); set.delete(''); return set; }
 function submitType(){
-  if(answered) return; answered=true;
-  const q=quiz[qi], good=q[aField()];
-  const ok=acceptedSet(good).has(norm($('qInput').value));
-  if(ok) qScore++;
-  const fb=$('qFeedback');
-  fb.className='qfeedback '+(ok?'ok':'no');
+  if(answered) return; answered=true; const q=quiz[qi], good=q[aField()];
+  const ok=acceptedSet(good).has(norm($('qInput').value)); if(ok) qScore++;
+  const fb=$('qFeedback'); fb.className='qfeedback '+(ok?'ok':'no');
   fb.innerHTML = ok ? '✓ Bravo, correct !' : `✗ Presque !<span class="corr">Réponse : <b>${good}</b></span>`;
   $('qInput').disabled=true; $('qValidate').style.display='none';
-  sessionLog.push({cat:q.cat, correct:ok});
-  setTimeout(nextStep, ok?750:1500);
+  sessionLog.push({cat:q.cat, correct:ok}); setTimeout(nextStep, ok?750:1500);
 }
 function nextStep(){ qi++; (qi<quiz.length)?renderQuestion():endQuiz(); }
 function endQuiz(){
-  $('qProgress').style.width='100%';
-  $('quizPlay').style.display='none'; $('quizEnd').style.display='block';
+  $('qProgress').style.width='100%'; $('quizPlay').style.display='none'; $('quizEnd').style.display='block';
   const total=quiz.length, pct=Math.round(qScore/total*100);
   $('finalScore').textContent=qScore+'/'+total;
   $('finalMsg').textContent = pct>=90?"Excellent ! 🎉":pct>=70?"Très bien ! 👏":pct>=50?"Bien, continue 💪":"Encore un peu d'entraînement 🌱";
   commitSession(qScore,total,pct); window.scrollTo(0,0);
 }
-// Valider avec la touche Entrée
 $('qInput').addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); submitType(); } });
 
 // Progression
