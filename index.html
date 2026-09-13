@@ -169,6 +169,68 @@
   .sw::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.2s}
   .sw.on::after{left:25px}
 
+  /* ---------- Permis ---------- */
+  :root{--violet:#7a5aa6;--violet-soft:#ece5f5;--warn:#c98a1a;--warn-soft:#f8ecd3}
+  .pm-tag{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:4px 10px;border-radius:999px;background:var(--bg);color:var(--muted)}
+  .pm-tag.k-v{background:var(--blue-soft);color:var(--blue)}
+  .pm-tag.k-q{background:var(--accent-soft);color:var(--accent)}
+  .pm-tag.k-p{background:var(--violet-soft);color:var(--violet)}
+  .pm-top{display:flex;justify-content:space-between;align-items:center;margin:-6px 0 8px}
+  .pflash{perspective:1400px;margin-bottom:14px}
+  .pflash-inner{display:grid;transition:transform .45s;transform-style:preserve-3d;cursor:pointer}
+  .pflash.flipped .pflash-inner{transform:rotateY(180deg)}
+  .pflash.noanim .pflash-inner{transition:none}
+  .pface{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;border:1px solid var(--line);box-shadow:var(--shadow);padding:18px;min-height:270px;display:flex;flex-direction:column;gap:10px}
+  .pfront{background:var(--card)}
+  .pback{background:#fbf1ec;transform:rotateY(180deg)}
+  .pm-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+  .pm-fiche{font-size:.78rem;color:var(--muted);font-weight:600}
+  .pm-state{font-size:.72rem;font-weight:700;color:var(--muted)}
+  .pm-q{font-size:1.2rem;font-weight:800;line-height:1.4;margin:auto 0;text-align:center;padding:8px 0}
+  .pm-tap{text-align:center;font-size:.78rem;color:var(--muted)}
+  .pm-qsmall{font-size:.85rem;color:var(--muted);font-weight:600;line-height:1.4;padding-bottom:8px;border-bottom:1px dashed #e6cfc4}
+  .pm-a{font-size:1rem;line-height:1.55}
+  .pm-a p{margin:4px 0} .pm-a ul{margin:6px 0;padding-left:20px} .pm-a li{margin:5px 0}
+  .pm-geste{color:var(--blue);font-weight:600}
+  .pm-rate{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .pm-rate button{border:1px solid var(--line);border-radius:14px;padding:11px 4px;font-size:.88rem;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--card);color:var(--ink)}
+  .pm-rate button .qi{font-size:1.4rem;line-height:1.2}
+  .pm-rate .r-ko{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+  .pm-rate .r-mid{background:var(--warn-soft);border-color:var(--warn);color:#94650f}
+  .pm-rate .r-ok{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+  .pm-hint{font-size:.8rem;color:var(--muted);margin:7px 2px 0}
+  .pm-from{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:.88rem;font-weight:600}
+  .pm-from input{width:80px;border:1px solid var(--line);border-radius:10px;padding:8px;font-size:1rem;text-align:center;color:var(--ink);background:var(--card)}
+  .pm-info{background:var(--bg);border-radius:12px;padding:10px 12px;font-size:.85rem;margin:4px 0 14px;color:var(--muted)}
+  .pm-info b{color:var(--ink)}
+  .pm-dice{font-size:3.6rem;font-weight:800;color:var(--accent);margin:18px auto;width:130px;height:130px;border-radius:28px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center}
+  .pm-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin:10px 0}
+  .pm-tile{aspect-ratio:1;border:1px solid transparent;border-radius:7px;font-size:.66rem;font-weight:700;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;font-family:inherit}
+  .pm-tile.s-new{background:var(--bg);color:var(--muted);border-color:var(--line)}
+  .pm-tile.s-ko{background:var(--bad-soft);color:var(--bad);border-color:var(--bad)}
+  .pm-tile.s-mid{background:var(--warn-soft);color:#94650f;border-color:var(--warn)}
+  .pm-tile.s-ok{background:var(--good);color:#fff}
+  .pm-no{flex:none;width:34px;height:34px;aspect-ratio:auto;font-size:.8rem;cursor:inherit}
+  .pm-sum{display:flex;align-items:center;gap:12px}
+  #pmFicheList .acc{scroll-margin-top:96px}
+  .pm-dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--line);flex:none}
+  .pm-dot.s-ko{background:var(--bad)} .pm-dot.s-mid{background:var(--warn)} .pm-dot.s-ok{background:var(--good)}
+  .pm-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.76rem;color:var(--muted)}
+  .pm-legend span{display:flex;align-items:center;gap:5px}
+  .pm-qa{border-top:1px solid var(--line);padding:12px 0}
+  .pm-qa:first-child{border-top:none}
+  .pm-qa-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+  .pm-qa-q{font-weight:700;font-size:.93rem;margin-bottom:4px}
+  .pm-qa .pm-a{font-size:.9rem;color:#4d463e}
+  .pm-big{font-size:3rem;font-weight:800;line-height:1.1;margin:2px 0}
+  .pm-herobar{height:10px;background:rgba(255,255,255,.3);border-radius:999px;overflow:hidden;margin:8px 0 4px}
+  .pm-herobar>i{display:block;height:100%;background:#fff;border-radius:999px;transition:width .4s}
+  .pm-mrow .mname{width:128px}
+  .pm-gain{text-align:center;font-weight:700;color:var(--good);margin:6px 0 2px}
+  .pm-home{cursor:pointer}
+  .pm-home-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .pm-home-pct{font-size:1.6rem;font-weight:800;color:var(--accent)}
+
   nav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(14px);border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom)}
   nav button{flex:1;background:none;border:none;padding:9px 0 8px;cursor:pointer;color:var(--muted);font-size:.63rem;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:3px}
   nav button .ic{font-size:1.35rem;line-height:1}
@@ -199,6 +261,11 @@
       <button onclick="go('quiz')"><span class="qi">✏️</span>Faire un quiz</button>
       <button onclick="go('info')"><span class="qi">📖</span>Fiches de cours</button>
       <button onclick="go('progress')"><span class="qi">📈</span>Ma progression</button>
+    </div>
+    <div class="card pm-home" onclick="go('permis')" style="margin-top:14px">
+      <span class="pill">🚗 Permis de conduire</span>
+      <div class="pm-home-row"><div><b>Les 100 fiches de l'examen</b><div class="lead" id="pmHomeSub" style="font-size:.85rem">Vérifications, sécurité routière, premiers secours</div></div><div class="pm-home-pct" id="pmHomePct">0%</div></div>
+      <div class="progress-bar" style="margin:10px 0 0"><i id="pmHomeBar" style="width:0%"></i></div>
     </div>
     <div class="card">
       <span class="pill">Confort de lecture</span>
@@ -349,6 +416,135 @@
       <div style="text-align:center;margin-top:10px"><button class="danger" onclick="resetProgress()">Effacer l'historique</button></div>
     </div>
   </section>
+
+  <!-- ================= PERMIS ================= -->
+  <section id="v-permis" class="view">
+    <div class="subnav" id="permisNav">
+      <button class="on" data-p="pm-revise" onclick="permisTab('pm-revise')">🃏 Réviser</button>
+      <button data-p="pm-tirage" onclick="permisTab('pm-tirage')">🎲 Tirage au sort</button>
+      <button data-p="pm-fiches" onclick="permisTab('pm-fiches')">📋 Les 100 fiches</button>
+      <button data-p="pm-suivi" onclick="permisTab('pm-suivi')">📈 Mon suivi</button>
+    </div>
+
+    <!-- Réviser : réglages -->
+    <div class="panel active" id="p-pm-revise">
+      <div class="card">
+        <span class="pill">Permis</span><h2>Cartes de révision</h2>
+        <p class="lead">Lis la question, réponds dans ta tête (ou à voix haute !), retourne la carte, puis dis honnêtement si tu savais.</p>
+        <div class="pm-info" id="pmStartInfo"></div>
+        <div class="setrow"><div class="lbl">Ordre</div><div class="seg" id="pmSegOrder">
+          <button class="on" data-v="smart" onclick="pmSetOpt('order','smart')">🧠 Priorités</button>
+          <button data-v="num" onclick="pmSetOpt('order','num')">🔢 Dans l'ordre</button>
+          <button data-v="rand" onclick="pmSetOpt('order','rand')">🔀 Au hasard</button>
+        </div>
+        <p class="pm-hint" id="pmOrderHint"></p>
+        <div class="pm-from" id="pmFromRow" style="display:none">À partir de la fiche n° <input id="pmFrom" type="number" min="1" max="100" value="1" inputmode="numeric"></div>
+        </div>
+        <div class="setrow"><div class="lbl">Thème</div><div class="seg" id="pmSegTheme">
+          <button class="on" data-v="tout" onclick="pmSetOpt('theme','tout')">Tout</button>
+          <button data-v="v" onclick="pmSetOpt('theme','v')">🚘 Vérifications</button>
+          <button data-v="qser" onclick="pmSetOpt('theme','qser')">🛣️ Sécurité routière</button>
+          <button data-v="ps" onclick="pmSetOpt('theme','ps')">⛑️ Premiers secours</button>
+        </div></div>
+        <div class="setrow"><div class="lbl">Nombre de cartes</div><div class="seg" id="pmSegLen">
+          <button data-v="10" onclick="pmSetOpt('len',10)">10</button>
+          <button class="on" data-v="20" onclick="pmSetOpt('len',20)">20</button>
+          <button data-v="40" onclick="pmSetOpt('len',40)">40</button>
+          <button data-v="all" onclick="pmSetOpt('len','all')">Toutes</button>
+        </div></div>
+        <button class="big" onclick="pmStart()">C'est parti</button>
+      </div>
+    </div>
+
+    <!-- Tirage au sort -->
+    <div class="panel" id="p-pm-tirage">
+      <div class="card" style="text-align:center">
+        <span class="pill">Comme le jour J</span><h2>Tirage au sort</h2>
+        <p class="lead">Une fiche est tirée au hasard parmi les 100 et tu réponds à ses 3 questions : la vérification, la question de sécurité routière et celle de premiers secours.</p>
+        <div class="pm-dice" id="pmDice">?</div>
+        <button class="big" id="pmTirBtn" onclick="pmTirage()">🎲 Tirer une fiche</button>
+      </div>
+    </div>
+
+    <!-- Session en cours (révision, tirage ou fiche) -->
+    <div class="panel" id="p-pm-play">
+      <div class="card" id="pmPlayCard">
+        <div class="progress-bar"><i id="pmBar" style="width:0%"></i></div>
+        <div class="pm-top"><span class="counter" id="pmCount">Carte 1</span><button class="danger" onclick="pmQuit()">Terminer</button></div>
+        <div class="pflash" id="pmFlash" onclick="pmFlip()"><div class="pflash-inner">
+          <div class="pface pfront">
+            <div class="pm-meta"><span class="pm-tag" id="pmTag">—</span><span class="pm-state" id="pmState"></span></div>
+            <div class="pm-fiche" id="pmFiche"></div>
+            <div class="pm-q" id="pmQ">—</div>
+            <div class="pm-tap">👆 Touche la carte pour voir la réponse</div>
+          </div>
+          <div class="pface pback">
+            <div class="pm-meta"><span class="pm-tag k-q">Réponse</span></div>
+            <div class="pm-qsmall" id="pmQ2"></div>
+            <div class="pm-a" id="pmA"></div>
+          </div>
+        </div></div>
+        <button class="big" id="pmReveal" onclick="pmFlip()">Voir la réponse</button>
+        <div class="pm-rate" id="pmRate" style="display:none">
+          <button class="r-ko" onclick="pmRate('ko')"><span class="qi">❌</span>Pas su</button>
+          <button class="r-mid" onclick="pmRate('mid')"><span class="qi">😬</span>Hésité</button>
+          <button class="r-ok" onclick="pmRate('ok')"><span class="qi">✅</span>Su !</button>
+        </div>
+      </div>
+      <div class="card" id="pmEnd" style="display:none"></div>
+    </div>
+
+    <!-- Les 100 fiches -->
+    <div class="panel" id="p-pm-fiches">
+      <div class="card">
+        <span class="pill">Permis</span><h2>Les 100 fiches</h2>
+        <p class="lead" id="pmFichesLead"></p>
+        <input class="search" id="pmSearch" type="search" placeholder="🔍 N° de fiche ou mot (hémorragie, pneu…)" oninput="pmRenderFiches()">
+        <div class="chips" id="pmFilter" style="margin-bottom:0">
+          <button class="chip on" data-f="all" onclick="pmSetFilter('all')">Toutes</button>
+          <button class="chip" data-f="ko" onclick="pmSetFilter('ko')">🔁 À revoir</button>
+          <button class="chip" data-f="new" onclick="pmSetFilter('new')">✨ Pas vues</button>
+          <button class="chip" data-f="mid" onclick="pmSetFilter('mid')">📈 En cours</button>
+          <button class="chip" data-f="ok" onclick="pmSetFilter('ok')">⭐ Maîtrisées</button>
+        </div>
+      </div>
+      <div id="pmFicheList"></div>
+    </div>
+
+    <!-- Suivi -->
+    <div class="panel" id="p-pm-suivi">
+      <div class="card hero">
+        <h2>Prête pour le jour J ?</h2>
+        <div class="pm-big" id="pmReady">0 %</div>
+        <div class="pm-herobar"><i id="pmReadyBar" style="width:0%"></i></div>
+        <p class="lead" id="pmReadyTxt" style="margin:4px 0 0"></p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="v" id="pmStSeen">0</div><div class="l">cartes vues</div></div>
+        <div class="stat"><div class="v" id="pmStOk">0</div><div class="l">maîtrisées</div></div>
+        <div class="stat"><div class="v" id="pmStKo">0</div><div class="l">à revoir</div></div>
+        <div class="stat"><div class="v" id="pmStStreak">0</div><div class="l">jours de suite</div></div>
+      </div>
+      <div class="card">
+        <h2>Les 100 fiches</h2>
+        <p class="lead">Une fiche est maîtrisée quand ses 3 questions le sont (réussies 2 fois de suite). Touche une case pour ouvrir la fiche.</p>
+        <div class="pm-grid" id="pmGrid"></div>
+        <div class="pm-legend">
+          <span><i class="pm-dot"></i>Pas vue</span><span><i class="pm-dot s-ko"></i>À revoir</span><span><i class="pm-dot s-mid"></i>En cours</span><span><i class="pm-dot s-ok"></i>Maîtrisée</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Maîtrise par thème</h2>
+        <div id="pmThemes"></div>
+      </div>
+      <div class="card">
+        <h2>Historique</h2>
+        <ul class="hist" id="pmHist"></ul>
+        <div id="pmHistEmpty" class="empty">Aucune révision pour l'instant.<br>Lance une session dans « Réviser » !</div>
+        <div style="text-align:center;margin-top:10px"><button class="danger" onclick="pmReset()">Remettre le suivi du permis à zéro</button></div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <nav>
@@ -357,9 +553,11 @@
   <button data-tab="learn" onclick="go('learn')"><span class="ic">🃏</span>Apprendre</button>
   <button data-tab="quiz" onclick="go('quiz')"><span class="ic">✏️</span>Tester</button>
   <button data-tab="progress" onclick="go('progress')"><span class="ic">📈</span>Progrès</button>
+  <button data-tab="permis" onclick="go('permis')"><span class="ic">🚗</span>Permis</button>
 </nav>
 
 <script src="data.js"></script>
+<script src="permis.js"></script>
 <script>
 /* =====================================================================
    LOGIQUE (le contenu des cours et du vocabulaire est dans data.js)
@@ -369,12 +567,16 @@ document.title = APP.title; $('appTitle').textContent=APP.title; $('appSub').tex
 const shuffle = a => a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
 const CATS = [...new Set(VOCAB.map(v=>v.cat))];
 
-function go(tab){
+function go(tab, sub){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   $('v-'+tab).classList.add('active');
   document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on', b.dataset.tab===tab));
+  const pm = tab==='permis';
+  $('appTitle').textContent = pm ? 'Permis de conduire' : APP.title;
+  $('appSub').textContent = pm ? "Les 100 fiches de l'examen pratique" : APP.subtitle;
   if(tab==='progress') renderProgress();
   if(tab==='home') renderHome();
+  if(pm) permisTab(sub || (pmSess && !pmSess.done ? 'pm-play' : 'pm-revise'));
   window.scrollTo(0,0);
 }
 function infoTab(p){
@@ -410,6 +612,7 @@ function renderHome(){
   $('greet').textContent=(h<18?'Bonjour':'Bonsoir')+' 👋';
   $('streakTxt').textContent = st.streak>0 ? (st.streak+' jour'+(st.streak>1?'s':'')+' de suite — continue !') : "Fais un quiz pour lancer ta série";
   showWotd(wotdIndex());
+  pmRenderHome();
 }
 function wotdIndex(){ const n=new Date(),s=new Date(n.getFullYear(),0,0); return Math.floor((n-s)/86400000)%VOCAB.length; }
 function showWotd(i){ $('wotdEn').textContent=VOCAB[i].en; $('wotdFr').textContent=VOCAB[i].fr; }
@@ -518,6 +721,250 @@ function renderProgress(){
   $('history').innerHTML=list.slice().reverse().map(r=>{ const d=new Date(r.date); const ds=d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short'})+' '+d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}); return `<li><span>${r.score}/${r.total} &nbsp;·&nbsp; <b style="color:var(--accent)">${r.pct}%</b></span><span class="d">${ds}</span></li>`; }).join('');
 }
 function resetProgress(){ if(confirm("Effacer tout l'historique et les statistiques ?")){ localStorage.removeItem(K_SCORES); localStorage.removeItem(K_STATS); renderProgress(); } }
+
+/* =====================================================================
+   PERMIS DE CONDUIRE (les 100 fiches sont dans permis.js)
+   Une "carte" = une question. Une même question présente dans plusieurs
+   fiches n'est qu'une seule carte : la réviser compte pour toutes ses fiches.
+   Niveau d'une carte : 0 = à revoir, 1 = en cours, 2+ = maîtrisée.
+   ===================================================================== */
+const PM_KIND = {
+  VI:{ic:'🚘', lbl:'Vérification intérieure', cls:'k-v'},
+  VE:{ic:'🔧', lbl:'Vérification extérieure', cls:'k-v'},
+  QSER:{ic:'🛣️', lbl:'Sécurité routière', cls:'k-q'},
+  PS:{ic:'⛑️', lbl:'Premiers secours', cls:'k-p'}
+};
+const PM_KIND_ORDER = {VI:0, VE:0, QSER:1, PS:2};
+const PM_THEME = {tout:null, v:['VI','VE'], qser:['QSER'], ps:['PS']};
+const PM_ST_LBL = {new:'Pas vue', ko:'À revoir', mid:'En cours', ok:'Maîtrisée'};
+const esc = s => String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+const PM_CARDS = {}, PM_FICHE_KEYS = {};
+PERMIS.forEach(f=>{
+  PM_FICHE_KEYS[f.n] = [[f.type,f.v],['QSER',f.qser],['PS',f.ps]].map(([kind,x])=>{
+    const key = kind+':'+norm(x.q);
+    if(!PM_CARDS[key]) PM_CARDS[key] = {key, kind, q:x.q, a:x.a, fiches:[]};
+    PM_CARDS[key].fiches.push(f.n);
+    return key;
+  });
+});
+const PM_LIST = Object.values(PM_CARDS);
+
+// Stockage
+const PM_K_STATE='permis_cartes', PM_K_SESS='permis_sessions', PM_K_STATS='permis_stats';
+function pmLoad(k,def){ try{ return JSON.parse(localStorage.getItem(k))||def; }catch(e){ return def; } }
+function pmSave(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+let pmState = pmLoad(PM_K_STATE, {});
+
+function pmStatus(key){ const s=pmState[key]; if(!s) return 'new'; return s.l>=2?'ok':s.l===1?'mid':'ko'; }
+function pmFicheStatus(n){ const st=PM_FICHE_KEYS[n].map(pmStatus); if(st.includes('ko')) return 'ko'; if(st.every(s=>s==='ok')) return 'ok'; if(st.every(s=>s==='new')) return 'new'; return 'mid'; }
+function pmCounts(list){ const c={new:0,ko:0,mid:0,ok:0}; (list||PM_LIST).forEach(x=>c[pmStatus(x.key)]++); return c; }
+function pmMasteredFiches(){ return PERMIS.filter(f=>pmFicheStatus(f.n)==='ok').length; }
+function pmReadyPct(){ const c=pmCounts(); return Math.round((c.ok+c.mid/2)/PM_LIST.length*100); } // "en cours" compte pour moitié
+function pmRateCard(key, r){
+  const s = pmState[key] || {l:0, n:0};
+  s.l = r==='ko' ? 0 : r==='mid' ? 1 : Math.min(s.l+1, 4);
+  s.n++; s.t = Date.now();
+  pmState[key] = s; pmSave(PM_K_STATE, pmState);
+}
+function pmFmt(a){
+  if(!a) return '<p class="pm-geste">🖐️ Geste pratique : rien à réciter, il faut savoir le trouver et le faire dans la voiture.</p>';
+  let txt='', li='';
+  a.split('\n').forEach(l=>{ if(l.startsWith('- ')) li+='<li>'+esc(l.slice(2))+'</li>'; else txt+='<p>'+esc(l)+'</p>'; });
+  return txt + (li?'<ul>'+li+'</ul>':'');
+}
+
+function permisTab(p){
+  document.querySelectorAll('#v-permis .panel').forEach(x=>x.classList.remove('active'));
+  $('p-'+p).classList.add('active');
+  document.querySelectorAll('#permisNav button').forEach(b=>b.classList.toggle('on', b.dataset.p===p));
+  if(p==='pm-revise') pmRenderStart();
+  if(p==='pm-fiches') pmRenderFiches();
+  if(p==='pm-suivi') pmRenderSuivi();
+  window.scrollTo(0,0);
+}
+function pmRenderHome(){
+  const pct=pmReadyPct(), c=pmCounts();
+  $('pmHomePct').textContent=pct+'%'; $('pmHomeBar').style.width=pct+'%';
+  if(c.new===PM_LIST.length) return;
+  $('pmHomeSub').textContent = pmMasteredFiches()+' fiches maîtrisées sur 100' + (c.ko?' · '+c.ko+' carte'+(c.ko>1?'s':'')+' à revoir':'');
+}
+
+// Réviser : réglages
+const pmOpt = {order:'smart', theme:'tout', len:20};
+const PM_ORDER_HINT = {
+  smart:"D'abord les cartes ratées, puis les nouvelles, puis celles à consolider.",
+  num:"Les questions dans l'ordre des fiches, à partir du numéro choisi.",
+  rand:"Toutes les cartes du thème, mélangées."
+};
+function pmSetOpt(k,v){
+  pmOpt[k]=v;
+  const seg={order:'pmSegOrder', theme:'pmSegTheme', len:'pmSegLen'}[k];
+  document.querySelectorAll('#'+seg+' button').forEach(b=>b.classList.toggle('on', b.dataset.v==String(v)));
+  pmRenderStart();
+}
+function pmPool(){ const t=PM_THEME[pmOpt.theme]; return PM_LIST.filter(c=>!t||t.includes(c.kind)); }
+function pmRenderStart(){
+  const pool=pmPool(), c=pmCounts(pool);
+  $('pmOrderHint').textContent = PM_ORDER_HINT[pmOpt.order];
+  $('pmFromRow').style.display = pmOpt.order==='num' ? 'flex' : 'none';
+  $('pmStartInfo').innerHTML = `<b>${pool.length}</b> questions différentes dans ce thème : `
+    + `<b>${c.ko}</b> à revoir · <b>${c.new}</b> jamais vues · <b>${c.mid}</b> en cours · <b>${c.ok}</b> maîtrisées`;
+}
+function pmStart(){
+  const pool=pmPool(); let list;
+  if(pmOpt.order==='rand') list=shuffle(pool);
+  else if(pmOpt.order==='num'){
+    const from=Math.min(100, Math.max(1, parseInt($('pmFrom').value)||1)); $('pmFrom').value=from;
+    const fk=c=>c.fiches.find(n=>n>=from);
+    list=pool.filter(fk).sort((a,b)=>fk(a)-fk(b) || PM_KIND_ORDER[a.kind]-PM_KIND_ORDER[b.kind]);
+  } else {
+    const grp={ko:0, new:1, mid:2, ok:3};
+    list=pool.slice().sort((a,b)=>{
+      const sa=pmStatus(a.key), sb=pmStatus(b.key);
+      if(grp[sa]!==grp[sb]) return grp[sa]-grp[sb];
+      if(sa==='new') return a.fiches[0]-b.fiches[0] || PM_KIND_ORDER[a.kind]-PM_KIND_ORDER[b.kind];
+      return pmState[a.key].t - pmState[b.key].t;
+    });
+  }
+  if(!list.length) return;
+  pmBegin({mode:'revise', cards: pmOpt.len==='all' ? list : list.slice(0, pmOpt.len)});
+}
+
+// Session (commune à la révision, au tirage et à une fiche)
+let pmSess = null;
+function pmBegin(s){
+  if(document.activeElement) document.activeElement.blur();
+  pmSess = Object.assign(s, {i:0, res:[], before:pmMasteredFiches(), done:false, flipped:false});
+  $('pmPlayCard').style.display='block'; $('pmEnd').style.display='none';
+  permisTab('pm-play'); pmShow();
+}
+function pmShow(){
+  const s=pmSess, c=s.cards[s.i], k=PM_KIND[c.kind], st=pmStatus(c.key);
+  const fl=$('pmFlash'); fl.classList.add('noanim'); fl.classList.remove('flipped'); void fl.offsetWidth; fl.classList.remove('noanim');
+  s.flipped=false; $('pmReveal').style.display='block'; $('pmRate').style.display='none';
+  $('pmBar').style.width=(s.i/s.cards.length*100)+'%';
+  $('pmCount').textContent=(s.mode==='tirage'?'Fiche n° '+s.fiche+' · question ':'Carte ')+(s.i+1)+' / '+s.cards.length;
+  $('pmTag').className='pm-tag '+k.cls; $('pmTag').textContent=k.ic+' '+k.lbl;
+  $('pmState').textContent={new:'✨ Nouvelle', ko:'🔁 À revoir', mid:'📈 En cours', ok:'⭐ Maîtrisée'}[st];
+  $('pmFiche').textContent=(c.fiches.length>1?'Fiches n° ':'Fiche n° ')+c.fiches.join(', ');
+  $('pmQ').textContent=c.q; $('pmQ2').textContent=c.q; $('pmA').innerHTML=pmFmt(c.a);
+}
+function pmFlip(){
+  const s=pmSess; if(!s||s.done) return;
+  s.flipped=!s.flipped; $('pmFlash').classList.toggle('flipped', s.flipped);
+  if(s.flipped){ $('pmReveal').style.display='none'; $('pmRate').style.display='grid'; }
+}
+function pmRate(r){
+  const s=pmSess; if(!s||!s.flipped||s.lock) return;
+  s.lock=true; const c=s.cards[s.i];
+  pmRateCard(c.key, r); s.res.push({key:c.key, r});
+  setTimeout(()=>{ s.lock=false; s.i++; s.i<s.cards.length ? pmShow() : pmEnd(); }, 150);
+}
+function pmQuit(){ if(!pmSess) return; if(pmSess.res.length) pmEnd(); else { pmSess.done=true; permisTab(pmSess.mode==='tirage'?'pm-tirage':pmSess.mode==='fiche'?'pm-fiches':'pm-revise'); } }
+function pmEnd(){
+  const s=pmSess; s.done=true;
+  const cnt=r=>s.res.filter(x=>x.r===r).length, ok=cnt('ok'), mid=cnt('mid'), ko=cnt('ko'), total=s.res.length;
+  const log=pmLoad(PM_K_SESS, []); log.push({date:new Date().toISOString(), mode:s.mode, fiche:s.fiche||null, total, ok, mid, ko});
+  pmSave(PM_K_SESS, log.slice(-300));
+  const st=pmLoad(PM_K_STATS, {streak:0, lastDate:null}), t=todayStr();
+  if(st.lastDate!==t){ const y=new Date(); y.setDate(y.getDate()-1); const ys=y.getFullYear()+'-'+(y.getMonth()+1)+'-'+y.getDate(); st.streak=(st.lastDate===ys)?(st.streak||0)+1:1; st.lastDate=t; pmSave(PM_K_STATS, st); }
+
+  s.missed = s.res.filter(x=>x.r!=='ok').map(x=>PM_CARDS[x.key]);
+  const after=pmMasteredFiches();
+  let head;
+  if(s.mode==='tirage'){
+    const msg = ok===total ? "Parfait, tu aurais eu tous les points ! 🎉" : ok+mid===total ? "Presque ! Encore un peu d'assurance 💪" : "Cette fiche mérite d'être revue 🌱";
+    head=`<span class="pill">Fiche n° ${s.fiche}</span><div class="result-big"><div class="score">${ok}/${total}</div><div class="msg">${msg}</div></div>`;
+  } else {
+    const pct=Math.round(ok/total*100);
+    const msg = pct>=90 ? "Excellent ! 🎉" : pct>=70 ? "Très bien ! 👏" : pct>=50 ? "Bien, continue 💪" : "Chaque carte revue compte 🌱";
+    head=`<span class="pill">${s.mode==='fiche'?'Fiche n° '+s.fiche:'Session terminée'}</span><div class="result-big"><div class="score">${ok}/${total}</div><div class="msg">${msg}</div></div>`;
+  }
+  const again = s.mode==='tirage' ? `<button class="big" onclick="permisTab('pm-tirage');pmTirage()" style="margin-top:10px">🎲 Tirer une autre fiche</button>`
+              : s.mode==='revise' ? `<button class="big${s.missed.length?' ghost':''}" onclick="permisTab('pm-revise')" style="margin-top:10px">Nouvelle session</button>` : '';
+  $('pmEnd').innerHTML = head
+    + `<div class="stats" style="margin:14px 0 6px"><div class="stat"><div class="v" style="color:var(--good)">${ok}</div><div class="l">✅ su</div></div><div class="stat"><div class="v" style="color:#94650f">${mid}</div><div class="l">😬 hésité</div></div><div class="stat"><div class="v" style="color:var(--bad)">${ko}</div><div class="l">❌ pas su</div></div></div>`
+    + (after>s.before ? `<p class="pm-gain">⭐ +${after-s.before} fiche${after-s.before>1?'s':''} maîtrisée${after-s.before>1?'s':''} ! (${after}/100)</p>` : `<p class="qsub" style="margin-bottom:4px">Fiches entièrement maîtrisées : ${after}/100</p>`)
+    + (s.missed.length ? `<button class="big" onclick="pmRetry()" style="margin-top:10px">🔁 Revoir les ${s.missed.length} carte${s.missed.length>1?'s':''} pas sue${s.missed.length>1?'s':''}</button>` : '')
+    + again
+    + `<button class="big ghost" onclick="permisTab('pm-suivi')" style="margin-top:10px">📈 Voir mon suivi</button>`;
+  $('pmBar').style.width='100%'; $('pmPlayCard').style.display='none'; $('pmEnd').style.display='block';
+  window.scrollTo(0,0);
+}
+function pmRetry(){ const m=pmSess&&pmSess.missed; if(m&&m.length) pmBegin({mode:'revise', cards:shuffle(m)}); }
+function pmReviseFiche(n){ pmBegin({mode:'fiche', fiche:n, cards:PM_FICHE_KEYS[n].map(k=>PM_CARDS[k])}); }
+
+// Tirage au sort
+function pmTirage(){
+  const btn=$('pmTirBtn'); if(btn.disabled) return; btn.disabled=true;
+  const target=1+Math.floor(Math.random()*100), calm=document.body.classList.contains('calm'), steps=calm?0:14;
+  let k=0;
+  const tick=()=>{
+    if(k<steps){ $('pmDice').textContent=1+Math.floor(Math.random()*100); k++; setTimeout(tick, 40+k*9); }
+    else { $('pmDice').textContent=target; setTimeout(()=>{ btn.disabled=false; pmBegin({mode:'tirage', fiche:target, cards:PM_FICHE_KEYS[target].map(key=>PM_CARDS[key])}); }, calm?250:700); }
+  };
+  tick();
+}
+
+// Les 100 fiches
+let pmFicheFilter='all';
+function pmSetFilter(f){ pmFicheFilter=f; document.querySelectorAll('#pmFilter .chip').forEach(b=>b.classList.toggle('on', b.dataset.f===f)); pmRenderFiches(); }
+function pmRenderFiches(openN){
+  $('pmFichesLead').textContent = `Chaque fiche = 1 vérification + 1 question de sécurité routière + 1 question de premiers secours. Beaucoup de questions reviennent d'une fiche à l'autre : il n'y a en fait que ${PM_LIST.length} questions différentes à connaître.`;
+  const q=norm($('pmSearch').value);
+  const list=PERMIS.filter(f=>{
+    if(pmFicheFilter!=='all' && pmFicheFilter!==pmFicheStatus(f.n)) return false;
+    if(!q) return true;
+    return String(f.n)===q || norm([f.v.q,f.v.a,f.qser.q,f.qser.a,f.ps.q,f.ps.a].join(' ')).includes(q);
+  });
+  $('pmFicheList').innerHTML = list.length ? list.map(f=>{
+    const st=pmFicheStatus(f.n), keys=PM_FICHE_KEYS[f.n];
+    const qa=[[f.type,f.v],['QSER',f.qser],['PS',f.ps]].map(([kind,x],i)=>{ const k=PM_KIND[kind], cs=pmStatus(keys[i]);
+      return `<div class="pm-qa"><div class="pm-qa-h"><span class="pm-tag ${k.cls}">${k.ic} ${k.lbl}</span><i class="pm-dot s-${cs}" title="${PM_ST_LBL[cs]}"></i></div><div class="pm-qa-q">${esc(x.q)}</div><div class="pm-a">${pmFmt(x.a)}</div></div>`; }).join('');
+    return `<details class="acc" id="pmf-${f.n}"${openN===f.n?' open':''}><summary><span class="pm-sum"><span class="pm-tile pm-no s-${st}">${f.n}</span><span>${esc(f.v.q)}<span class="who"><br>${PM_KIND[f.type].lbl} · ${PM_ST_LBL[st]}</span></span></span></summary><div class="body">${qa}<button class="big" onclick="pmReviseFiche(${f.n})" style="margin-top:6px">🃏 Réviser cette fiche</button></div></details>`;
+  }).join('') : '<div class="card empty">Aucune fiche ne correspond.</div>';
+}
+function pmOpenFiche(n){
+  $('pmSearch').value=''; pmSetFilter('all'); permisTab('pm-fiches'); pmRenderFiches(n);
+  const el=$('pmf-'+n); if(el) el.scrollIntoView({block:'start'});
+}
+
+// Suivi
+function pmRenderSuivi(){
+  const c=pmCounts(), pct=pmReadyPct(), fm=pmMasteredFiches();
+  $('pmReady').textContent=pct+' %'; $('pmReadyBar').style.width=pct+'%';
+  $('pmReadyTxt').textContent = c.new===PM_LIST.length ? "Lance ta première session pour commencer à remplir la jauge !"
+    : `${c.ok} questions maîtrisées sur ${PM_LIST.length} · ${fm} fiche${fm>1?'s':''} sur 100 entièrement maîtrisée${fm>1?'s':''}`;
+  const st=pmLoad(PM_K_STATS, {streak:0, lastDate:null}), y=new Date(); y.setDate(y.getDate()-1);
+  const alive = st.lastDate===todayStr() || st.lastDate===(y.getFullYear()+'-'+(y.getMonth()+1)+'-'+y.getDate());
+  $('pmStSeen').textContent=PM_LIST.length-c.new; $('pmStOk').textContent=c.ok; $('pmStKo').textContent=c.ko; $('pmStStreak').textContent=alive?st.streak:0;
+  $('pmGrid').innerHTML=PERMIS.map(f=>{ const s=pmFicheStatus(f.n); return `<button class="pm-tile s-${s}" title="Fiche ${f.n} : ${PM_ST_LBL[s]}" onclick="pmOpenFiche(${f.n})">${f.n}</button>`; }).join('');
+  $('pmThemes').innerHTML=[['🚘 Vérifications',['VI','VE']],['🛣️ Sécurité routière',['QSER']],['⛑️ Premiers secours',['PS']]].map(([lbl,kinds])=>{
+    const pool=PM_LIST.filter(x=>kinds.includes(x.kind)), cc=pmCounts(pool), p=Math.round(cc.ok/pool.length*100);
+    return `<div class="mrow pm-mrow"><div class="mname">${lbl}</div><div class="mbar"><i style="width:${p}%"></i></div><div class="mval">${cc.ok}/${pool.length}</div></div>`;
+  }).join('');
+  const log=pmLoad(PM_K_SESS, []);
+  $('pmHistEmpty').style.display=log.length?'none':'block';
+  $('pmHist').innerHTML=log.slice(-30).reverse().map(r=>{
+    const d=new Date(r.date), ds=d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short'})+' '+d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+    const what = r.mode==='tirage' ? '🎲 Tirage · fiche '+r.fiche : r.mode==='fiche' ? '📋 Fiche '+r.fiche : '🃏 Révision · '+r.total+' cartes';
+    return `<li><span>${what} &nbsp;·&nbsp; <b style="color:var(--good)">✅ ${r.ok}/${r.total}</b></span><span class="d">${ds}</span></li>`;
+  }).join('');
+}
+function pmReset(){
+  if(!confirm("Remettre à zéro tout le suivi du permis (cartes, historique, série) ?")) return;
+  [PM_K_STATE,PM_K_SESS,PM_K_STATS].forEach(k=>localStorage.removeItem(k));
+  pmState={}; pmRenderSuivi();
+}
+
+// Raccourcis clavier pendant une session : Espace = retourner, 1/2/3 = pas su / hésité / su
+document.addEventListener('keydown', e=>{
+  if(!pmSess || pmSess.done || !$('p-pm-play').classList.contains('active') || !$('v-permis').classList.contains('active')) return;
+  if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+  if(e.key===' ' || e.key==='Enter'){ e.preventDefault(); if(!pmSess.flipped) pmFlip(); }
+  else if(pmSess.flipped && ['1','2','3'].includes(e.key)) pmRate(['ko','mid','ok'][+e.key-1]);
+});
 
 // Init
 applyPrefs(); renderHome();
