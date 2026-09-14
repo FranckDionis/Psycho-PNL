@@ -187,6 +187,7 @@
   .pm-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
   .pm-fiche{font-size:.78rem;color:var(--muted);font-weight:600}
   .pm-state{font-size:.72rem;font-weight:700;color:var(--muted)}
+  .pm-ctx{font-size:.8rem;line-height:1.4;color:var(--blue);background:var(--blue-soft);border-radius:10px;padding:7px 10px;font-weight:600}
   .pm-q{font-size:1.2rem;font-weight:800;line-height:1.4;margin:auto 0;text-align:center;padding:8px 0}
   .pm-tap{text-align:center;font-size:.78rem;color:var(--muted)}
   .pm-qsmall{font-size:.85rem;color:var(--muted);font-weight:600;line-height:1.4;padding-bottom:8px;border-bottom:1px dashed #e6cfc4}
@@ -476,11 +477,13 @@
           <div class="pface pfront">
             <div class="pm-meta"><span class="pm-tag" id="pmTag">—</span><span class="pm-state" id="pmState"></span></div>
             <div class="pm-fiche" id="pmFiche"></div>
+            <div class="pm-ctx" id="pmCtx" style="display:none"></div>
             <div class="pm-q" id="pmQ">—</div>
             <div class="pm-tap">👆 Touche la carte pour voir la réponse</div>
           </div>
           <div class="pface pback">
             <div class="pm-meta"><span class="pm-tag k-q">Réponse</span></div>
+            <div class="pm-ctx" id="pmCtx2" style="display:none"></div>
             <div class="pm-qsmall" id="pmQ2"></div>
             <div class="pm-a" id="pmA"></div>
           </div>
@@ -741,11 +744,17 @@ const PM_ST_LBL = {new:'Pas vue', ko:'À revoir', mid:'En cours', ok:'Maîtrisé
 const esc = s => String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 const PM_CARDS = {}, PM_FICHE_KEYS = {};
+const pmMots = a => new Set(norm(a).split(' ').filter(w=>w.length>3));
+const pmInclus = (a,b) => [...a].every(w=>b.has(w));
 PERMIS.forEach(f=>{
   PM_FICHE_KEYS[f.n] = [[f.type,f.v],['QSER',f.qser],['PS',f.ps]].map(([kind,x])=>{
-    const key = kind+':'+norm(x.q);
-    if(!PM_CARDS[key]) PM_CARDS[key] = {key, kind, q:x.q, a:x.a, fiches:[]};
+    let key = kind+':'+norm(x.q);
+    // Même question mais réponse réellement différente (fiches 9 et 41 : « les deux autres
+    // documents » dépend du document vérifié) : on en fait une carte distincte.
+    if(PM_CARDS[key] && kind!==f.type){ const a=pmMots(PM_CARDS[key].a), b=pmMots(x.a); if(!pmInclus(a,b) && !pmInclus(b,a)) key += '#'+f.n; }
+    if(!PM_CARDS[key]) PM_CARDS[key] = {key, kind, q:x.q, a:x.a, fiches:[], ctx:{}};
     PM_CARDS[key].fiches.push(f.n);
+    PM_CARDS[key].ctx[f.n] = f.v.q;   // vérification qui précède la question dans la fiche
     return key;
   });
 });
@@ -850,6 +859,9 @@ function pmShow(){
   $('pmState').textContent={new:'✨ Nouvelle', ko:'🔁 À revoir', mid:'📈 En cours', ok:'⭐ Maîtrisée'}[st];
   $('pmFiche').textContent=(c.fiches.length>1?'Fiches n° ':'Fiche n° ')+c.fiches.join(', ');
   $('pmQ').textContent=c.q; $('pmQ2').textContent=c.q; $('pmA').innerHTML=pmFmt(c.a);
+  // Les questions de sécurité routière suivent la vérification ("Quelle est son utilité ?") : on la rappelle
+  const ctx = c.kind==='QSER' ? '🔗 Suite de la vérification : '+c.ctx[s.fiche && c.ctx[s.fiche] ? s.fiche : c.fiches[0]] : '';
+  ['pmCtx','pmCtx2'].forEach(id=>{ $(id).textContent=ctx; $(id).style.display=ctx?'block':'none'; });
 }
 function pmFlip(){
   const s=pmSess; if(!s||s.done) return;
